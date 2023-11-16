@@ -26,10 +26,15 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <form class="d-flex" asp-controller="Auth" asp-action="Logout" method="post" id="logoutForm">
+                        <button class="btn btn-link text-dark" type="submit">Cerrar sesión</button>
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -40,6 +45,7 @@
         <div class="container">
             &copy; 2023 - assetManagement - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

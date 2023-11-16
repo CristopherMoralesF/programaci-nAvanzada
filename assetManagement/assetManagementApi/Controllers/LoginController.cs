@@ -28,7 +28,12 @@ namespace assetManagementApi.Controllers
             if (user != null)
             {
                 // Successful login, return a success response
-                return Ok();
+                return Ok(new
+                {
+                    NOMBRE = user.NOMBRE,
+                    CORREO = user.CORREO,
+                    ID_ROLE = user.ID_ROLE
+                });
             }
             else
             {

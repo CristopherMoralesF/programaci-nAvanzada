@@ -3,8 +3,11 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using assetManagementClassLibrary.Models;
 
 namespace assetManagment.Controllers
 {
@@ -36,11 +39,17 @@ namespace assetManagment.Controllers
             var jsonRequest = JsonSerializer.Serialize(request);
             var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("api/login", content);
+            var response = await _httpClient.PostAsync("https://localhost:7291/api/login", content);
 
             if (response.IsSuccessStatusCode)
             {
-                // Successful login, redirect to a dashboard or other page
+                var user = await response.Content.ReadFromJsonAsync<UsuariosEnt>();
+
+                // Guardar información de sesión
+                HttpContext.Session.SetString("NOMBRE", user.NOMBRE);
+                HttpContext.Session.SetString("CORREO", user.CORREO);
+                HttpContext.Session.SetInt32("ID_ROLE", user.ID_ROLE);
+                
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -50,5 +59,17 @@ namespace assetManagment.Controllers
                 return View();
             }
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+
+            HttpContext.Session.Remove("NOMBRE");
+            HttpContext.Session.Remove("CORREO");
+            HttpContext.Session.Remove("ID_ROLE");
+
+            return RedirectToAction("Login", "Auth"); // Redirige al método de inicio de sesión
+        }
+
     }
 }
