@@ -1,4 +1,5 @@
 ﻿using assetManagement.Models;
+using assetManagementClassLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -41,9 +42,10 @@ namespace assetManagementApi.Controllers
                 return BadRequest();
             }
         }
-    }
 
-    public class LoginRequestModel
+}
+
+public class LoginRequestModel
     {
         public string IN_EMAIL { get; set; }
         public string IN_CONTRASENNA { get; set; }

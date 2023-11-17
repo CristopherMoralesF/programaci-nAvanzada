@@ -8,6 +8,11 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using assetManagementClassLibrary.Models;
+using System.Net;
+using System.Net.Mail;
+using assetManagement.Models;
+using System.Text;
+
 
 namespace assetManagment.Controllers
 {
@@ -70,6 +75,7 @@ namespace assetManagment.Controllers
 
             return RedirectToAction("Login", "Auth"); // Redirige al método de inicio de sesión
         }
+       
 
     }
 }

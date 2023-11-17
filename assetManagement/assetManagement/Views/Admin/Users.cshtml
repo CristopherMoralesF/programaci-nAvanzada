@@ -1,0 +1,120 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using assetManagementClassLibrary.Models
+@model List<UsuariosEnt>
+
+<!-- Tabla para mostrar la lista de usuarios -->
+<div class="container mt-4">
+    <h2>Administración de Usuarios</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.ID_USUARIO</td>
+                    <td>@user.NOMBRE</td>
+                    <td>@user.CORREO</td>
+                    <td>@user.ID_ROLE</td>
+                    <td>@user.ESTADO</td>
+                    <td>
+                        <!-- Botón de editar usuario -->
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal-@user.ID_USUARIO">Editar</button>
+
+                        <!-- Botón de eliminar usuario -->
+                        <form asp-controller="AdminController" asp-action="DeleteUser" method="post" class="d-inline">
+                            <input type="hidden" name="userId" value="@user.ID_USUARIO" />
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+
+                <!-- Modal de edición de usuario -->
+                <div class="modal fade" id="editModal-@user.ID_USUARIO" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Editar Usuario</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Formulario para editar usuario -->
+                                <form asp-controller="AdminController" asp-action="EditUser" method="post">
+                                    <input type="hidden" name="ID_USUARIO" value="@user.ID_USUARIO" />
+                                    <div class="form-group">
+                                        <label for="NOMBRE">Nombre</label>
+                                        <input type="text" class="form-control" id="NOMBRE" name="NOMBRE" value="@user.NOMBRE">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="CORREO">Correo</label>
+                                        <input type="email" class="form-control" id="CORREO" name="CORREO" value="@user.CORREO">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ID_ROLE">Rol</label>
+                                        <input type="text" class="form-control" id="ID_ROLE" name="ID_ROLE" value="@user.ID_ROLE">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ESTADO">Estado</label>
+                                        <input type="text" class="form-control" id="ESTADO" name="ESTADO" value="@user.ESTADO">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </tbody>
+    </table>
+
+    <!-- Botón para agregar un nuevo usuario -->
+    <button class="btn btn-success" data-toggle="modal" data-target="#addModal">Agregar Usuario</button>
+
+    <!-- Modal para agregar un nuevo usuario -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Agregar Nuevo Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para agregar un nuevo usuario -->
+                    <form asp-controller="AdminController" asp-action="AddUser" method="post">
+                        <div class="form-group">
+                            <label for="newNombre">Nombre</label>
+                            <input type="text" class="form-control" id="newNombre" name="NOMBRE">
+                        </div>
+                        <div class="form-group">
+                            <label for="newCorreo">Correo</label>
+                            <input type="email" class="form-control" id="newCorreo" name="CORREO">
+                        </div>
+                        <div class="form-group">
+                            <label for="newRol">Rol</label>
+                            <input type="text" class="form-control" id="newRol" name="ID_ROLE">
+                        </div>
+                        <div class="form-group">
+                            <label for="newEstado">Estado</label>
+                            <input type="text" class="form-control" id="newEstado" name="ESTADO">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -23,4 +23,5 @@ namespace assetManagementClassLibrary.Models
         public string role { get; set; }
 
     }
+   
 }
