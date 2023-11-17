@@ -54,8 +54,15 @@ namespace assetManagment.Controllers
                 HttpContext.Session.SetString("NOMBRE", user.NOMBRE);
                 HttpContext.Session.SetString("CORREO", user.CORREO);
                 HttpContext.Session.SetInt32("ID_ROLE", user.ID_ROLE);
-                
-                return RedirectToAction("Index", "Home");
+
+                if (user.ID_ROLE == 1) // Si el ID_ROLE es igual a 1 (administrador)
+                {
+                    return RedirectToAction("Users", "Admin");
+                }
+                else // En otros casos (posiblemente otros roles)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
@@ -64,6 +71,7 @@ namespace assetManagment.Controllers
                 return View();
             }
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()

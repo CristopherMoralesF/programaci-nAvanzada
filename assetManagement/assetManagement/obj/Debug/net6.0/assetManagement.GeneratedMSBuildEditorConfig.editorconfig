@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\santi\OneDrive\Documentos\assetmanagmentproyect\assetManagement\assetManagement
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/santi/OneDrive/Documentos/assetmanagmentproyect/assetManagement/assetManagement/Views/Admin/AgregarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWdyZWdhclVzdWFyaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/santi/OneDrive/Documentos/assetmanagmentproyect/assetManagement/assetManagement/Views/Admin/EditarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdGFyVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/santi/OneDrive/Documentos/assetmanagmentproyect/assetManagement/assetManagement/Views/Admin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
