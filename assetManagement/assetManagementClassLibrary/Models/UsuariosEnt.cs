@@ -7,6 +7,7 @@ using System.Web;
 
 namespace assetManagementClassLibrary.Models
 {
+    [Table("USUARIO")]
     public class UsuariosEnt
     {
         [Key]

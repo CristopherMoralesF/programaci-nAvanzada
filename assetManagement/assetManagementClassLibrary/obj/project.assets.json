@@ -2018,11 +2018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
       "projectName": "assetManagementClassLibrary",
-      "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
+      "projectPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
       "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\obj\\",
+      "outputPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",

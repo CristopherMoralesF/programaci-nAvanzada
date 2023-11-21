@@ -2273,11 +2273,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+      "projectUniqueName": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
       "projectName": "assetManagementApi",
-      "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+      "projectPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
       "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\obj\\",
+      "outputPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2294,11 +2294,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
-              "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
+            "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
             },
-            "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj": {
-              "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj"
+            "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagement\\assetManagement.csproj": {
+              "projectPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagement\\assetManagement.csproj"
             }
           }
         }

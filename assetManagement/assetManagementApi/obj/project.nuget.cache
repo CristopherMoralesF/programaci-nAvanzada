@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JdkPDjP+d8FMosf9vh8KvykWrSJv6zoPVFmMRf0q8muTCzFuaOb3BhvWtC5uQJgE6RoGKG7RpIBF5aANMgUu1w==",
+  "dgSpecHash": "mLEhQCoPvMCKibjzckRa6GBLydzJPi1zknUF2tlEJmRyTvKECDW2KFTkwkSuhu+aiL5RAcHIS7CzQ9V/JCGzGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+  "projectFilePath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\santi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\santi\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

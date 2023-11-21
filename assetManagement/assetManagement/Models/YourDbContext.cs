@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using assetManagementClassLibrary.Models;
 using assetManagement.Models;
+using assetManagementClassLibrary.assetManagementDbModel;
 
 namespace assetManagement.Models
 {
@@ -12,6 +13,7 @@ namespace assetManagement.Models
 
         // DbSet for UsuariosEnt entity
         public DbSet<UsuariosEnt> Usuarios { get; set; }
+
 
         // Other DbSets or configurations can be added here for other entities
 

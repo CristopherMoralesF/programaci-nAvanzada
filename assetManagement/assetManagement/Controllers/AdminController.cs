@@ -8,18 +8,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using assetManagementClassLibrary.Models; // Asegúrate de tener acceso a este espacio de nombres
+using Microsoft.EntityFrameworkCore;
+using assetManagement.Models;
 
 public class AdminController : Controller
 {
     private readonly HttpClient _httpClient;
 
-    public AdminController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+    private readonly YourDbContext _dbContext;
+
+    public AdminController(YourDbContext dbContext, IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
+        _dbContext = dbContext;
+
         _httpClient = httpClientFactory.CreateClient();
         _httpClient.BaseAddress = new Uri(configuration["ApiSettings:AssetManagementApiUrl"]);
     }
-
-    // Mostrar la vista de administración de usuarios
     public async Task<IActionResult> Users()
     {
         var response = await _httpClient.GetAsync("api/admin");
@@ -30,23 +34,17 @@ public class AdminController : Controller
         }
         else
         {
-            // Manejar error si no se puede obtener la lista de usuarios
             return View("Error");
         }
     }
-    //GET AddUser
 
     [HttpGet]
     public IActionResult AddUser()
     {
         var newUser = new UsuariosEnt();
-       
-
-
-        return View("AgregarUsuario");
+        return View("AgregarUsuario", newUser);
     }
 
-    // Añadir nuevo usuario (POST)
     [HttpPost]
     public async Task<IActionResult> AddUser(UsuariosEnt newUser)
     {
@@ -60,12 +58,10 @@ public class AdminController : Controller
         }
         else
         {
-            // Manejar error si no se puede añadir el usuario
             return View("Error");
         }
     }
 
-    // Eliminar usuario
     [HttpPost]
     public async Task<IActionResult> DeleteUser(int userId)
     {
@@ -76,34 +72,52 @@ public class AdminController : Controller
         }
         else
         {
-            // Manejar error si no se puede eliminar el usuario
             return View("Error");
         }
     }
 
-    //GET EDIT USER
-
     [HttpGet]
-    public IActionResult EditUser()
+    public async Task<IActionResult> EditUser(int userId)
     {
-        return View("EditarUsuario");
+        var user = await GetUserFromDatabase(userId);
+
+        if (user != null)
+        {
+            return View("EditarUsuario", user);
+        }
+        else
+        {
+            return View("Error");
+        }
     }
-    // Editar usuario (POST)
+
     [HttpPost]
     public async Task<IActionResult> EditUser(UsuariosEnt updatedUser)
     {
-        var jsonRequest = JsonSerializer.Serialize(updatedUser);
-        var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
+        // Esta acción debería realizar la actualización del usuario en la base de datos
+        var existingUser = await _dbContext.Usuarios.FindAsync(updatedUser.ID_USUARIO);
 
-        var response = await _httpClient.PutAsync($"api/admin/{updatedUser.ID_USUARIO}", content);
-        if (response.IsSuccessStatusCode)
+        if (existingUser != null)
         {
+            existingUser.NOMBRE = updatedUser.NOMBRE;
+            existingUser.CORREO = updatedUser.CORREO;
+            existingUser.CONTRASENNA = updatedUser.CONTRASENNA;
+            existingUser.ID_ROLE = updatedUser.ID_ROLE;
+
+            await _dbContext.SaveChangesAsync();
+
             return RedirectToAction("Users");
         }
         else
         {
-            // Manejar error si no se puede editar el usuario
             return View("Error");
         }
+    }
+
+    private async Task<UsuariosEnt> GetUserFromDatabase(int userId)
+    {
+        // Lógica para obtener el usuario de la base de datos utilizando Entity Framework
+        var user = await _dbContext.Usuarios.FindAsync(userId);
+        return user;
     }
 }

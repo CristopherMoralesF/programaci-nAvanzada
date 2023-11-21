@@ -27,7 +27,8 @@
                     <td>@user.ID_ROLE</td>
                     <td>
                         <!-- Botón de editar usuario -->
-                        <a href="@Url.Action("EditarUsuario", "Admin", new { userId = user.ID_USUARIO })" class="btn btn-primary">Editar</a>
+                        <a href="@Url.Action("EditUser", "Admin", new { userId = user.ID_USUARIO })" class="btn btn-primary">Editar</a>
+
 
                         <!-- Botón de eliminar usuario -->
                         <form asp-controller="Admin" asp-action="DeleteUser" method="post" class="d-inline">
