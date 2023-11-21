@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementApi\\assetManagementApi.csproj": {}
+    "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementApi\\assetManagementApi.csproj": {
+    "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+        "projectUniqueName": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
         "projectName": "assetManagementApi",
-        "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+        "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
         "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementApi\\obj\\",
+        "outputPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
+              "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
               },
-              "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagement\\assetManagement.csproj": {
-                "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagement\\assetManagement.csproj"
+              "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj": {
+                "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
+    "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
         "projectName": "assetManagementClassLibrary",
-        "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
+        "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
         "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\obj\\",
+        "outputPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -164,14 +164,14 @@
         }
       }
     },
-    "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagement\\assetManagement.csproj": {
+    "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagement\\assetManagement.csproj",
+        "projectUniqueName": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj",
         "projectName": "assetManagement",
-        "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagement\\assetManagement.csproj",
+        "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj",
         "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagement\\obj\\",
+        "outputPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -188,8 +188,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
+              "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
               }
             }
           }

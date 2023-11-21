@@ -26,3 +26,17 @@ C:\Users\santi\OneDrive\Documentos\assetmanagmentproyect\assetManagement\assetMa
 C:\Users\santi\OneDrive\Documentos\assetmanagmentproyect\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb
 C:\Users\santi\OneDrive\Documentos\assetmanagmentproyect\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.genruntimeconfig.cache
 C:\Users\santi\OneDrive\Documentos\assetmanagmentproyect\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\ref\assetManagementClassLibrary.dll
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.deps.json
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.runtimeconfig.json
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.pdb
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.AssemblyReference.cache
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfoInputs.cache
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfo.cs
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\refint\assetManagementClassLibrary.dll
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.genruntimeconfig.cache
+C:\Users\santi\Source\Repos\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\ref\assetManagementClassLibrary.dll

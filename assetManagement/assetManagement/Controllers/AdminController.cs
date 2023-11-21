@@ -34,6 +34,17 @@ public class AdminController : Controller
             return View("Error");
         }
     }
+    //GET AddUser
+
+    [HttpGet]
+    public IActionResult AddUser()
+    {
+        var newUser = new UsuariosEnt();
+       
+
+
+        return View("AgregarUsuario");
+    }
 
     // Añadir nuevo usuario (POST)
     [HttpPost]
@@ -70,6 +81,13 @@ public class AdminController : Controller
         }
     }
 
+    //GET EDIT USER
+
+    [HttpGet]
+    public IActionResult EditUser()
+    {
+        return View("EditarUsuario");
+    }
     // Editar usuario (POST)
     [HttpPost]
     public async Task<IActionResult> EditUser(UsuariosEnt updatedUser)

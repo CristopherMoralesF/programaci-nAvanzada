@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MKQc4/Jg0V4IVJnw54uEnlEoEMNjtbFWhTDz7JJcNYH9JCrXL6oqToH7EE0SolEsxXvh+N5pgTZz37HprsODHA==",
+  "dgSpecHash": "DnkMWyEm8hhCJGbdYVp7HwzG0YNDO01Zom1vYXAvP1DH9Qgxw9jvKCZ33FgwAI60bgXJWPfoGVyqaI4Sr4S0OA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\santi\\OneDrive\\Documentos\\assetmanagmentproyect\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
+  "projectFilePath": "C:\\Users\\santi\\Source\\Repos\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\santi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\santi\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

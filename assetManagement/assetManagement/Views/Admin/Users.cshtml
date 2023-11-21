@@ -14,7 +14,6 @@
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Rol</th>
-                <th>Estado</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -26,7 +25,6 @@
                     <td>@user.NOMBRE</td>
                     <td>@user.CORREO</td>
                     <td>@user.ID_ROLE</td>
-                    <td>@user.ESTADO</td>
                     <td>
                         <!-- Botón de editar usuario -->
                         <a href="@Url.Action("EditarUsuario", "Admin", new { userId = user.ID_USUARIO })" class="btn btn-primary">Editar</a>
@@ -44,5 +42,5 @@
     </table>
 
     <!-- Botón para agregar un nuevo usuario -->
-    <a href="@Url.Action("AgregarUsuario", "Admin")" class="btn btn-success">Agregar Usuario</a>
+    <a asp-controller ="Admin" asp-action="AddUser"  class="btn btn-success">Agregar Usuario</a>
 </div>
