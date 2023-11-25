@@ -1,0 +1,186 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model IEnumerable<assetManagementClassLibrary.ClaseEnt>
+
+@{
+    ViewBag.Title = "ListarClases";
+}
+
+<div class="container-fluid px-4" style="padding-top: 25px">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Lista Clases
+                    <button type="button" class="btn btn-primary" style="margin-left: 50px" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i> Agregar Clase</button>
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Nombre Clase</th>
+                                <th>Vida Util</th>
+                                <th>Cuenta Activo</th>
+                                <th>Cuenta Gasto</th>
+                                <th>Cuenta Dep Acumulada</th>
+                                <th>Validaciones</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Nombre Clase</th>
+                                <th>Vida Util</th>
+                                <th>Cuenta Activo</th>
+                                <th>Cuenta Gasto</th>
+                                <th>Cuenta Dep Acumulada</th>
+                                <th>Validaciones</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var clase in Model)
+                            {
+                                <tr>
+                                    <td>@clase.descripcionClase</td>
+                                    <td>@clase.vidaUtil</td>
+                                    <td>@clase.cuentaActivo.idCuenta</td>
+                                    <td>@clase.cuentaGasto.idCuenta</td>
+                                    <td class="text-center">@clase.cuentaDepAcumulada.idCuenta</td>
+                                    <td><button type="button" class="btn btn-primary" style="margin-left: 50px" onclick="traerInformacionClase(@clase.idClase)"><i class="fa fa-eye"></i></button></td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container" style="margin-top: 25px">
+                    <div class="row">
+                        <h4 id="editModalHeader"><i class="fas fa-plus"></i> Agregar Clase</h4>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12" style="margin-top: 10px">
+                            <form>
+                                <div class="form-group">
+                                    <label for="Clase">Clase</label>
+                                    <input type="text" id="Clase" class="form-control" placeholder="Descripción Clase" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="vidaUtil">Vida Util</label>
+                                    <input type="number" id="vidaUtil" class="form-control" placeholder="Vida Util" required />
+                                </div>
+
+
+                                <!-------------------------------------------------------------------------------------------------->
+
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selCuentaActivo">Cuenta Activo</label>
+                                        <select class="form-control" name="cuentaActivo" id="cuentaActivo" onchange="valirdarClase('cuentaActivo','activo fijo')">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selCuentaGasto">Cuenta Gasto</label>
+                                        <select class="form-control" name="cuentaGasto" id="cuentaGasto" onchange="valirdarClase('cuentaGasto','gasto')">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selCuentaDepAc">Cuenta Depreciación Acumulada</label>
+                                        <select class="form-control" name="cuentaDepAc" id="cuentaDepAc" onchange="valirdarClase('cuentaDepAc','depreciación acumulada')">
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+                                <!-------------------------------------------------------------------------------------------------->
+
+
+                                <div class="form-group text-center">
+                                    <div class="alert alert-danger" id="alrMensajeError" role="alert" style="display: none">
+                                        Complete toda la información requerida
+                                    </div>
+                                    <button class="btn btn-primary" id="btnCrearClase" onclick="crearClase();"><i class="fas fa-plus"></i> Agregar Nueva Clase</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-validaciones" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="detalleClaseModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="detalleClaseModalHeader"><h4>Validaciones Clase</h4></div>
+                </div>
+                <div class="modal-body">
+                    <!-- Detalle validaciones -->
+                    <div class="row justify-content-center">
+                        <p>Por favor indique la información cualititativa que se debe de recuperar sobre los activos bajo la clase seleccionada</p>
+                    </div>
+
+                    <!-- Agregar Validaciones -->
+                    <div class="row justify-content-center">
+                        <form onsubmit="crearValidacionClase();  return false">
+                            <div class="row">
+                                <input type="hidden" name="txtIDClase" id="txtIDClase" />
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-9">
+                                    <input type="text" name="txtValidacion" id="txtValidacion" placeholder="Indique detalle nueva validación en caso de ser necesario" required class="form-control" />
+                                </div>
+                                <div class="col-xl-3">
+                                    <input type="submit" name="btnSubmit" value="Crear Validación" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Tabla Validaciones -->
+                    <div class="row justify-content-center" style="margin-top: 10px">
+                        <div class="col-xl-9">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Clase</th>
+                                        <th class="text-center">Validación</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="validacionesTableBody">
+                                    <tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- SweetAlerts -->
+<script src="~/templates/js/sweetAlert.js"></script>
+<script src="~/Scripts/Custom Scripts/GenericAlerts.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="~/templates/js/ChartJS.js"></script>
+<script src="~/Scripts/Custom Scripts/listarClases.js"></script>
+

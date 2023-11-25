@@ -1,0 +1,121 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model IEnumerable<Proyecto.Entities.CuentaContableEnt>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid px-4" style="padding-top: 25px">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Lista Cuentas Contables <button type="button" class="btn btn-primary" style="margin-left: 50px" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i> Agregar Cuenta Contable</button>
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Cuenta Contable</th>
+                                <th>Descripción Cuenta</th>
+                                <th>Total Debitos</th>
+                                <th>Total Creditos</th>
+                                <th>Balance</th>
+                                <th>Naturaleza</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Cuenta Contable</th>
+                                <th>Descripción Cuenta</th>
+                                <th>Total Debitos</th>
+                                <th>Total Creditos</th>
+                                <th>Balance</th>
+                                <th>Naturaleza</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var cuenta in Model)
+                            {
+                                <tr>
+                                    <td>@cuenta.idCuenta</td>
+                                    <td>@cuenta.descripcionCuenta</td>
+                                    <td>@string.Format("{0:#,##0.00}", @cuenta.totalDebitos)</td>
+                                    <td>@string.Format("{0:#,##0.00}", @cuenta.totalCreditos)</td>
+                                    <td>@string.Format("{0:#,##0.00}", @cuenta.balance)</td>
+                                    <td>@cuenta.naturaleza</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container" style="margin-top: 25px">
+                    <div class="row">
+                        <h4 id="editModalHeader"><i class="fas fa-plus"></i> Agregar Cuenta Contable</h4>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12" style="margin-top: 10px">
+                            <form>
+                                <div class="form-group">
+                                    <label for="txtCuentaContable">Cuenta Contable</label>
+                                    <input type="text" pattern="([1-6])-([1-9])-([1-9])-([1-9][0-9][0-9][0-9][0-9][0-9])" onchange="validarCuentaDuplicada();" id="txtCuentaContable" class="form-control" placeholder="Cuenta Contable" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtDescripciónCuenta">Descripción Cuenta</label>
+                                    <input type="text" id="txtDescripciónCuenta" class="form-control" placeholder="Descripción Cuenta" required />
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selCategoriaCuenta">Categoría Cuenta</label>
+                                        <select class="form-control" id="selCategoriaCuenta" onchange="validarCategoriaCuenta();">
+                                            <option value="0">Categoria Cuenta Contable</option>
+                                            <option value="1">Activos</option>
+                                            <option value="2">Pasivos</option>
+                                            <option value="3">Capital</option>
+                                            <option value="4">Ingresos</option>
+                                            <option value="5">Gastos</option>
+                                            <option value="6">Complementaria de Activo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selNaturalezaCuenta">Naturaleza Cuenta</label>
+                                        <select class="form-control" id="selNaturalezaCuenta">
+                                            <option value="D">Debito</option>
+                                            <option value="C">Credito</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center">
+                                    <div class="alert alert-danger" id="alrMensajeError" role="alert" style="display: none">
+                                        Complete toda la información requerida
+                                    </div>
+                                    <button class="btn btn-primary" id="btnCrearCuenta" onclick="agregarCuentaContable();"><i class="fas fa-plus"></i> Agregar Cuenta Contable</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/templates/js/jquery-3.2.1.slim.min.js"></script>
+<script src="~/templates/js/ChartJS.js"></script>
+<script src="~/Scripts/Custom Scripts/CuentasContables.js"></script>
+
+
