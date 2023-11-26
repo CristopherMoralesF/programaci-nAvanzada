@@ -2268,19 +2268,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\santi\\.nuget\\packages\\": {}
+    "C:\\Users\\crist\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+      "projectUniqueName": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
       "projectName": "assetManagementApi",
-      "projectPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
-      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementApi\\obj\\",
+      "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+      "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2288,17 +2288,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
-              "projectPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
+            "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
             },
-            "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagement\\assetManagement.csproj": {
-              "projectPath": "C:\\Users\\santi\\Downloads\\ASSETPROYECT\\assetManagement\\assetManagement\\assetManagement.csproj"
+            "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj": {
+              "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj"
             }
           }
         }
@@ -2353,7 +2354,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

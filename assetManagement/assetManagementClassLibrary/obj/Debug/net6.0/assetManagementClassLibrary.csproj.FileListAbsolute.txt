@@ -54,3 +54,11 @@ C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementClassLibrar
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.genruntimeconfig.cache
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\ref\assetManagementClassLibrary.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.AssemblyReference.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfoInputs.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfo.cs
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\refint\assetManagementClassLibrary.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb

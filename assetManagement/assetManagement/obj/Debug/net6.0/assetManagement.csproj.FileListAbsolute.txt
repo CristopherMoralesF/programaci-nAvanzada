@@ -278,3 +278,14 @@ C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagement\obj\Debug\
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.pdb
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.genruntimeconfig.cache
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagement\obj\Debug\net6.0\ref\assetManagement.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.csproj.AssemblyReference.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.AssemblyInfoInputs.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.AssemblyInfo.cs
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.csproj.CoreCompileInputs.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.RazorAssemblyInfo.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.RazorAssemblyInfo.cs
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\refint\assetManagement.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\obj\Debug\net6.0\assetManagement.pdb

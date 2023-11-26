@@ -9,57 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = assetManagement
 build_property.RootNamespace = assetManagement
-build_property.ProjectDir = C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagement\
+build_property.ProjectDir = C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagement
+build_property.MSBuildProjectDirectory = C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagement
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Admin/AgregarUsuario.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Activo/detalleActivo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZvXGRldGFsbGVBY3Rpdm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Activo/detalleActivos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZvXGRldGFsbGVBY3Rpdm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Admin/AgregarUsuario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWdyZWdhclVzdWFyaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Admin/EditarUsuario.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Admin/EditarUsuario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdGFyVXN1YXJpby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Admin/Users.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Admin/Users.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Auth/Login.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Home/Index.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Clase/EjecutarDepreciacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc2VcRWplY3V0YXJEZXByZWNpYWNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Clase/ListarClases.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc2VcTGlzdGFyQ2xhc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/CuentasContables/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhc0NvbnRhYmxlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Home/Privacy.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Shared/Error.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/_ViewImports.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/_ViewStart.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/santi/Downloads/ASSETPROYECT/assetManagement/assetManagement/Views/Shared/_Layout.cshtml]
+[C:/Users/crist/Documents/GitHub/programacionAvanzada/assetManagement/assetManagement/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-linxml0buj

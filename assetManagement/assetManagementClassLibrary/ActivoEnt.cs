@@ -8,6 +8,8 @@ namespace Proyecto_API.Entities
 {
     public class ActivoEnt
     {
+        public DateTime FechaAdquisicion;
+
         public int idActivo { get; set; }
         public ClaseEnt claseActivo { get; set; }
         public UbicacionEnt ubicacionActivo { get; set; }

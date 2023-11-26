@@ -299,3 +299,13 @@ C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementApi\obj\Deb
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.pdb
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.genruntimeconfig.cache
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementApi\obj\Debug\net6.0\ref\assetManagementApi.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.csproj.AssemblyReference.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.AssemblyInfoInputs.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.AssemblyInfo.cs
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.csproj.CoreCompileInputs.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\refint\assetManagementApi.dll
+C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.pdb
