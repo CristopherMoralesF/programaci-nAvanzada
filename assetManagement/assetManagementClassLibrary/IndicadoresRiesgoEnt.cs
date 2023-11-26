@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Proyecto_API.Entities
+namespace assetManagementClassLibrary
 {
     public class IndicadoresRiesgoEnt
     {

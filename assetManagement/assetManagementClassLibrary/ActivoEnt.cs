@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using assetManagementClassLibrary.Models;
 
-namespace Proyecto_API.Entities
+namespace assetManagementClassLibrary
 {
     public class ActivoEnt
     {

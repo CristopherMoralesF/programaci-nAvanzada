@@ -299,3 +299,10 @@ C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementApi\obj\Deb
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.pdb
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementApi\obj\Debug\net6.0\assetManagementApi.genruntimeconfig.cache
 C:\Users\santi\Downloads\ASSETPROYECT\assetManagement\assetManagementApi\obj\Debug\net6.0\ref\assetManagementApi.dll
+C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\bin\Debug\net6.0\assetManagement.deps.json
+C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\bin\Debug\net6.0\assetManagement.runtimeconfig.json
+C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\bin\Debug\net6.0\assetManagement.staticwebassets.runtime.json
+C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\bin\Debug\net6.0\assetManagement.exe
+C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\bin\Debug\net6.0\assetManagementApi.staticwebassets.runtime.json
+C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\bin\Debug\net6.0\assetManagement.dll
+C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementApi\bin\Debug\net6.0\assetManagement.pdb
