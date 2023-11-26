@@ -1,0 +1,117 @@
+﻿@model IEnumerable<assetManagementClassLibrary.ConciliacionEnt>
+
+@{
+    ViewBag.Title = "Conciliacion";
+}
+
+<div class="container" style="margin-top: 25px">
+
+    <center>
+        <h3 class="text-muted">Conciliación de Activos Fijos</h3>
+        <h5 class="text-muted">Compañía de Manejo de Activos S.A</h5>
+        <p>Información presentada al @DateTime.Now</p>
+    </center>
+
+    <div class="container" style="margin-top: 50px">
+        <div class="row">
+            <div class="col-6">
+                <h5 class="text-muted">Clase Activo</h5>
+            </div>
+            <div class="col-2">
+                <h5 class="text-muted text-center">Contabilidad</h5>
+            </div>
+            <div class="col-2">
+                <h5 class="text-muted text-center">Auxiliar</h5>
+            </div>
+            <div class="col-2">
+                <h5 class="text-muted text-center">Diferencia</h5>
+            </div>
+        </div>
+
+
+        @{
+
+            String currentClass = string.Empty;
+            Double oldResult = 0;
+            Double oldAmountSubledger = 0;
+            Double oldAmountAccounting = 0;
+
+            foreach (var linea in Model)
+            {
+                if (currentClass == linea.descripcionClase)
+                {
+
+                    currentClass = linea.descripcionClase;
+                    Double subledger = Convert.ToDouble(linea.valorAuxiliar);
+                    Double balance = Convert.ToDouble(linea.balance);
+                    Double result = subledger - balance;
+                    Double totalBalance = oldAmountAccounting - Convert.ToDouble(linea.balance);
+                    Double totalSubledger = oldAmountSubledger - Convert.ToDouble(linea.valorAuxiliar);
+
+
+
+
+                    <div class="row" style="margin-top: 5px">
+                        <div class="col-6">
+                            <h5 class="text-muted">@linea.categoriaCuenta</h5>
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}",@linea.balance)
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}", @linea.valorAuxiliar)
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}", @linea.diferencia)
+                        </div>
+                    </div>
+
+                    <div class="row" style="border-top: 1px solid #969696; margin-top:10px">
+                        <div class="col-6">
+                            <h4 class="text-muted">
+                                Total @linea.descripcionClase
+                            </h4>
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}", @totalBalance)
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}", @totalSubledger)
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}",@oldResult - @linea.diferencia)
+                        </div>
+                    </div>
+
+                }
+                else
+                {
+                    currentClass = linea.descripcionClase;
+                    oldResult = Convert.ToDouble(linea.diferencia);
+                    oldAmountSubledger = Convert.ToDouble(linea.valorAuxiliar);
+                    oldAmountAccounting = Convert.ToDouble(linea.balance);
+
+                    <div class="row" style="margin-top: 5px">
+                        <div class="col-6">
+                            <h5 class="text-muted">@linea.descripcionClase</h5>
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}", @linea.valorAuxiliar)
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}", @linea.balance)
+                        </div>
+                        <div class="col-2 text-center">
+                            @string.Format("{0:#,##0.00}", @oldResult)
+                        </div>
+                    </div>
+
+                }
+            }
+
+        }
+
+    </div>
+
+</div>
+

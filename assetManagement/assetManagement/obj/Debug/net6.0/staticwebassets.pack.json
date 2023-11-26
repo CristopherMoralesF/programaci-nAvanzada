@@ -5,6 +5,106 @@
       "PackagePath": "staticwebassets\\assetManagement.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\CuentasContables.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\CuentasContables.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\EjecutarDepreciacion.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\EjecutarDepreciacion.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\GenericAlerts.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\GenericAlerts.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\ListaUsuarios.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\ListaUsuarios.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\detalleActivos.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\detalleActivos.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\detalleAsientos.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\detalleAsientos.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\listaActivos.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\listaActivos.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\listarClases.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\listarClases.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\principal_chartActivosDisponibles.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\principal_chartActivosDisponibles.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\Custom Scripts\\principal_chartEvaluaciónRiesgos.js",
+      "PackagePath": "staticwebassets\\Scripts\\Custom Scripts\\principal_chartEvaluaciónRiesgos.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\bootstrap.js",
+      "PackagePath": "staticwebassets\\Scripts\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Scripts\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery-3.4.1.intellisense.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery-3.4.1.intellisense.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery-3.4.1.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery-3.4.1.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery-3.4.1.min.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery-3.4.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery-3.4.1.min.map",
+      "PackagePath": "staticwebassets\\Scripts\\jquery-3.4.1.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery-3.4.1.slim.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery-3.4.1.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery-3.4.1.slim.min.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery-3.4.1.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery-3.4.1.slim.min.map",
+      "PackagePath": "staticwebassets\\Scripts\\jquery-3.4.1.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery.validate-vsdoc.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery.validate-vsdoc.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\Scripts\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\Scripts\\modernizr-2.8.3.js",
+      "PackagePath": "staticwebassets\\Scripts\\modernizr-2.8.3.js"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -243,6 +343,94 @@
     {
       "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\demo\\chart-area-demo.js",
+      "PackagePath": "staticwebassets\\templates\\assets\\demo\\chart-area-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\demo\\chart-bar-demo.js",
+      "PackagePath": "staticwebassets\\templates\\assets\\demo\\chart-bar-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\demo\\chart-pie-demo.js",
+      "PackagePath": "staticwebassets\\templates\\assets\\demo\\chart-pie-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\demo\\datatables-demo.js",
+      "PackagePath": "staticwebassets\\templates\\assets\\demo\\datatables-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\img\\Login img.png",
+      "PackagePath": "staticwebassets\\templates\\assets\\img\\Login img.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\img\\Reset password.png",
+      "PackagePath": "staticwebassets\\templates\\assets\\img\\Reset password.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\img\\error-404-monochrome.svg",
+      "PackagePath": "staticwebassets\\templates\\assets\\img\\error-404-monochrome.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\img\\information_calculoLineaRecta.png",
+      "PackagePath": "staticwebassets\\templates\\assets\\img\\information_calculoLineaRecta.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\img\\recuperarContrasenna.png",
+      "PackagePath": "staticwebassets\\templates\\assets\\img\\recuperarContrasenna.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\img\\semaforo_amarillo.png",
+      "PackagePath": "staticwebassets\\templates\\assets\\img\\semaforo_amarillo.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\img\\semaforo_rojo.png",
+      "PackagePath": "staticwebassets\\templates\\assets\\img\\semaforo_rojo.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\assets\\img\\semaforo_verde.png",
+      "PackagePath": "staticwebassets\\templates\\assets\\img\\semaforo_verde.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\css\\bootsrap.min.css",
+      "PackagePath": "staticwebassets\\templates\\css\\bootsrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\css\\styles.css",
+      "PackagePath": "staticwebassets\\templates\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\js\\ChartJS.js",
+      "PackagePath": "staticwebassets\\templates\\js\\ChartJS.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\templates\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\js\\datatables-simple-demo.js",
+      "PackagePath": "staticwebassets\\templates\\js\\datatables-simple-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\js\\jquery-3.2.1.slim.min.js",
+      "PackagePath": "staticwebassets\\templates\\js\\jquery-3.2.1.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\templates\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\templates\\js\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\templates\\js\\scripts.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\wwwroot\\templates\\js\\sweetAlert.js",
+      "PackagePath": "staticwebassets\\templates\\js\\sweetAlert.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.assetManagement.Microsoft.AspNetCore.StaticWebAssets.props",

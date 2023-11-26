@@ -2,7 +2,7 @@
 using assetManagementClassLibrary;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Proyecto_API.Entities;
+
 
 namespace assetManagement.Controllers
 {
@@ -20,9 +20,66 @@ namespace assetManagement.Controllers
 
         [HttpGet]
         [Route("consultarAsientos")]
-        public List<Asiento> consultarAsientos()
+        public IActionResult consultarAsientos()
         {
-            return _context.Asientos.ToList();  
+
+            List<AsientoEnt> asientos = new List<AsientoEnt>();
+
+            foreach (var asiento in _context.Asientos.ToList())
+            {
+                List<AsientoLineasEnt> lineasAsiento = new List<AsientoLineasEnt>();
+
+                var asientoCuerpo = (from x in _context.AsientoLineas where x.IdAsiento == asiento.IdAsiento select x).ToList();
+
+                foreach (var linea in asientoCuerpo)
+                {
+                    lineasAsiento.Add(new AsientoLineasEnt
+                    {
+                        idAsientoLinea = linea.IdAsientoLinea,
+                        idCuentaContable = linea.IdCuentaContable,
+                        descripcionLinea = linea.DescripcionLinea,
+                        debito = linea.Debito,
+                        credito = linea.Credito,    
+                    });
+
+                }
+
+                if (asiento.IdClase == null)
+                {
+                    asientos.Add(new AsientoEnt
+                    {
+                        idAsiento = asiento.IdAsiento,
+                        clase = new ClaseEnt { idClase = 0, descripcionClase = "No Activos" },
+                        fecha = asiento.Fecha,
+                        descripcion = asiento.Descripcion,
+                        cuerpoAsiento = lineasAsiento
+                    });
+
+                } else
+                {
+
+                    var claseActivo = (from x in _context.Clases where x.IdClase == asiento.IdClase select x).FirstOrDefault();
+
+
+                    asientos.Add(new AsientoEnt
+                    {
+                        idAsiento = asiento.IdAsiento,
+                        clase = new ClaseEnt
+                        {
+                            idClase = claseActivo.IdClase,
+                            descripcionClase = claseActivo.DescripcionClase,
+                            vidaUtil = (int)claseActivo.VidaUtil
+                        },
+                        fecha = asiento.Fecha,
+                        descripcion = asiento.Descripcion,
+                        cuerpoAsiento = lineasAsiento
+                    });
+                }
+
+
+            }
+
+            return Ok(asientos);  
         }
 
         [HttpGet]
@@ -72,6 +129,7 @@ namespace assetManagement.Controllers
             }
 
         }
+
 
 
     }
