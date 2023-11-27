@@ -52,6 +52,9 @@ public class AdminController : Controller
     [HttpPost]
     public async Task<IActionResult> AddUser(UsuariosEnt newUser)
     {
+        newUser.estado = 1;
+        newUser.estadoContrasenna = 1;
+        newUser.Token = "ABDC";
         var jsonRequest = JsonSerializer.Serialize(newUser);
         var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
