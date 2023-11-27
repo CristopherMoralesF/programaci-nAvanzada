@@ -1,0 +1,115 @@
+﻿<!-- Views/Auth/Login.cshtml -->
+@{
+    Layout = null;
+    ViewData["Title"] = "Sistema de Manejo de Activos";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 350px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        button {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        p.error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .reset-password-btn {
+            background-color: #dc3545;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .reset-password-btn:hover {
+                background-color: #c82333;
+            }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Sistema de Manejo de Activos</h1>
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <p class="error-message">@TempData["ErrorMessage"]</p>
+        }
+
+        <form asp-action="Login" method="post">
+            <label for="email">Correo:</label>
+            <input type="email" id="email" name="email" title="Ingrese un correo electrónico válido" required />
+
+            <label for="password">Contrasena:</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+</body>
+</html>
