@@ -1,8 +1,14 @@
 ﻿using assetManagement.Models;
 using assetManagementClassLibrary;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Newtonsoft.Json;
 using System.Diagnostics;
-
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace assetManagement.Controllers
 {
@@ -14,16 +20,47 @@ namespace assetManagement.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("https://localhost:7291");
-            _httpClient.DefaultRequestHeaders.Accept.Clear();
-            _httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public IActionResult Index()
         {
             return View();
         }
+
+        public async Task<IActionResult> Principal(UsuariosEnt usuario) {
+
+            try
+            {
+
+                JsonContent body = JsonContent.Create(usuario); 
+
+                HttpResponseMessage response = await _httpClient.PostAsync("api/Usuarios/validarUsuario", body);
+
+                // Check if the request was successful
+                if (response.IsSuccessStatusCode)
+                {
+                    
+                    UsuariosEnt nuevoUsuario = new UsuariosEnt();
+                    // Do something with the nuevoUsuario
+
+                    return Ok(nuevoUsuario);
+                }
+                else
+                {
+                    // Handle the case when the API request is not successful
+                    return BadRequest("API request failed");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+
+
+
+        }
+        
 
     }
 }
