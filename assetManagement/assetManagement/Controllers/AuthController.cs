@@ -68,7 +68,12 @@ namespace assetManagment.Controllers
                     {
                         return RedirectToAction("Users", "Admin");
                     }
-                    else
+                    else if (usuarioEntity.IdRole == 2)
+                    {
+                        return RedirectToAction("Index", "Asientos");
+
+                    }
+                    else 
                     {
                         return RedirectToAction("Index", "Home");
                     }
@@ -81,7 +86,7 @@ namespace assetManagment.Controllers
             }
             else
             {
-                TempData["ErrorMessage"] = "Error en la comunicación con el servidor";
+                TempData["ErrorMessage"] = "Datos incorrectos, intentelo de nuevo o contacte a su administrador";
                 return View();
             }
         }
