@@ -1,0 +1,67 @@
+﻿@model assetManagementClassLibrary.assetManagementDbModel.Activo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Activo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdActivo" />
+            <div class="form-group">
+                <label asp-for="IdClase" class="control-label"></label>
+                <select asp-for="IdClase" class="form-control" asp-items="ViewBag.IdClase"></select>
+                <span asp-validation-for="IdClase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdUbicacion" class="control-label"></label>
+                <select asp-for="IdUbicacion" class="form-control" asp-items="ViewBag.IdUbicacion"></select>
+                <span asp-validation-for="IdUbicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdDuenno" class="control-label"></label>
+                <select asp-for="IdDuenno" class="form-control" asp-items="ViewBag.IdDuenno"></select>
+                <span asp-validation-for="IdDuenno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEstado" class="control-label"></label>
+                <select asp-for="IdEstado" class="form-control" asp-items="ViewBag.IdEstado"></select>
+                <span asp-validation-for="IdEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionActivo" class="control-label"></label>
+                <input asp-for="DescripcionActivo" class="form-control" />
+                <span asp-validation-for="DescripcionActivo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorAdquisicion" class="control-label"></label>
+                <input asp-for="ValorAdquisicion" class="form-control" />
+                <span asp-validation-for="ValorAdquisicion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaAdquisicion" class="control-label"></label>
+                <input asp-for="FechaAdquisicion" class="form-control" />
+                <span asp-validation-for="FechaAdquisicion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PeriodosDepreciados" class="control-label"></label>
+                <input asp-for="PeriodosDepreciados" class="form-control" />
+                <span asp-validation-for="PeriodosDepreciados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

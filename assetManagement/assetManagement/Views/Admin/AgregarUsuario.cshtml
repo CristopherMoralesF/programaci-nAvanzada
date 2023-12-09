@@ -1,33 +1,51 @@
-﻿@{
+﻿@model UsuariosEnt
+@using assetManagementClassLibrary
+
+@{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-@using assetManagementClassLibrary.Models
-
 
 <h2>Agregar Usuario</h2>
 
 <form asp-controller="Admin" asp-action="AddUser" method="post">
     <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" name="NOMBRE" placeholder="Ingrese el nombre del usuario" value="@Model?.NOMBRE">
+        <label asp-for="nombre"></label>
+        <input asp-for="nombre" class="form-control" placeholder="Ingrese el nombre del Usuario" />
+        <span asp-validation-for="nombre" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label for="correo">Correo:</label>
-        <input type="email" class="form-control" id="correo" name="CORREO" placeholder="Ingrese el correo electrónico" value="@Model?.CORREO">
+        <label asp-for="correo"></label>
+        <input asp-for="correo" class="form-control" placeholder="Ingrese el correo electrónico del Usuario" />
+        <span asp-validation-for="correo" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label for="contrasenna">Contraseña:</label>
-        <input type="password" class="form-control" id="contrasenna" name="CONTRASENNA" placeholder="Ingrese la contraseña" value="@Model?.CONTRASENNA">
+        <label asp-for="contraseña"></label>
+        <input asp-for="contraseña" class="form-control" placeholder="Ingrese la contraseña del Usuario" type="password" />
+        <span asp-validation-for="contraseña" class="text-danger"></span>
     </div>
+
+ 
+
     <div class="form-group">
-        <label for="rolId">ID del Rol:</label>
-        <input type="text" class="form-control" id="rolId" name="ID_ROLE" placeholder="Ingrese el rol ID del Usuario" value="@Model?.ID_ROLE">
+        <label asp-for="idRole">idRole</label>
+        <select asp-for="idRole" class="form-control" id="idRole">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <span asp-validation-for="idRole" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label for="rolNombre">Nombre del Rol:</label>
-        <input type="text" class="form-control" id="rolNombre" name="role" placeholder="Ingrese el nombre del rol del usuario" value="@Model?.role">
+        <label asp-for="role">Seleccionar Rol:</label>
+        <select asp-for="role" class="form-control">
+            <option value="1">Admin</option>
+            <option value="2">Contador</option>
+            <option value="3">Tagger</option>
+        </select>
+        <span asp-validation-for="role" class="text-danger"></span>
     </div>
+
 
     <button type="submit" class="btn btn-primary mt-4">Agregar Usuario</button>
 </form>

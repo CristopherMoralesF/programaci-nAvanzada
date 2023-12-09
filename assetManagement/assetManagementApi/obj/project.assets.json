@@ -870,23 +870,6 @@
           }
         }
       },
-      "assetManagement/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.24",
-          "assetManagementClassLibrary": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/assetManagement.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/assetManagement.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "assetManagementClassLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2246,11 +2229,6 @@
         "version.txt"
       ]
     },
-    "assetManagement/1.0.0": {
-      "type": "project",
-      "path": "../assetManagement/assetManagement.csproj",
-      "msbuildProject": "../assetManagement/assetManagement.csproj"
-    },
     "assetManagementClassLibrary/1.0.0": {
       "type": "project",
       "path": "../assetManagementClassLibrary/assetManagementClassLibrary.csproj",
@@ -2263,7 +2241,6 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.24",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.24",
       "Swashbuckle.AspNetCore >= 6.2.3",
-      "assetManagement >= 1.0.0",
       "assetManagementClassLibrary >= 1.0.0"
     ]
   },
@@ -2273,11 +2250,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
       "projectName": "assetManagementApi",
       "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
       "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementApi\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+      "projectName": "assetManagementApi",
+      "projectPath": "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+      "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementApi\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2295,11 +2280,16 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< Updated upstream
             "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
               "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
             },
             "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj": {
               "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagement\\assetManagement.csproj"
+=======
+            "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj"
+>>>>>>> Stashed changes
             }
           }
         }

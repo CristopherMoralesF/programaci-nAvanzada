@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "9i+OjoKU9aqwpvQmLuWMtGnlilFydcKuemaJUJUb8IpxF377isBqdGi+tABTr0Gpl9Nt7ZcTOtKSU6BlUNyQAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+=======
+  "dgSpecHash": "dkDijzZc+ou3/iI8itebwSJigKMLlgP2/X/8LZM7DBJP8GACY7Z+zI+N0UzntkVTUAFi5bGIV3QUTS+EL7SM7Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementApi\\assetManagementApi.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

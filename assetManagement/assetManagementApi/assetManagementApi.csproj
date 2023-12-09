@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\assetManagementClassLibrary\assetManagementClassLibrary.csproj" />
-    <ProjectReference Include="..\assetManagement\assetManagement.csproj" />
   </ItemGroup>
 
 </Project>

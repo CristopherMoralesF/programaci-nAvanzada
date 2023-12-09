@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.Pkcs;
 using System.Web;
 
-namespace Proyecto_API.Entities
+namespace assetManagementClassLibrary
 {
     public class AsientoEnt
     {

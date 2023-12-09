@@ -1,0 +1,105 @@
+﻿@model assetManagementClassLibrary.AsientoEnt
+
+
+@{
+    ViewBag.Title = "detalleAsiento";
+}
+
+<!-- Get the total of the JE -->
+@{
+
+    double totalImpact = 0;
+
+    foreach (var linea in Model.cuerpoAsiento)
+    {
+        totalImpact = totalImpact + linea.debito;
+    }
+
+}
+
+<div class="container-fluid px-4" style="padding-top: 25px">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Detalles Asiento Número: @Model.idAsiento
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <ul>
+                                <li>Clase Impactada: @Model.clase.descripcionClase</li>
+                                <li>Fecha: @Model.fecha</li>
+                                <li>Descripción: @Model.descripcion</li>
+                                <li>Total Impacto: @string.Format("{0:#,##0.00}", @totalImpact)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-6">
+                <div class="card-body" style="background: rgb(79,80,96); background: linear-gradient(6deg, rgba(79,80,96,1) 17%, rgba(0,0,0,1) 65%); color: white ">
+                    <h5><i class="fas fa-info" style="margin-right: 10px"></i> ¿Qué es un asiento?</h5>
+                    <p>
+                        Mediante los asientos contables los contadores dejan un registro de cada uno de los eventos economicos realizados por la organización, los cuales serán reflejados al final del periodo en los estados financieros de la organización, siendo guía para la toma de deciciones financieras
+                        <br />Tomar en consideración que los asientos acá mostrados no pueden ser editados, para evitar cualquier modificación en los calculos realizados por el sistema, en caso de ser necesario, realice un asiento de ajuste en su ERP
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 25px">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-check me-1"></i>
+                    Detalle Cuerpo Asiento @Model.idAsiento
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>ID Linea</th>
+                                <th>Cuenta Contable</th>
+                                <th>Descripción Linea</th>
+                                <th>Debito</th>
+                                <th>Credito</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>ID Linea</th>
+                                <th>Cuenta Contable</th>
+                                <th>Descripción Linea</th>
+                                <th>Debito</th>
+                                <th>Credito</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var linea in Model.cuerpoAsiento)
+                            {
+                                <tr>
+                                    <td>@linea.idAsientoLinea</td>
+                                    <td>@linea.idCuentaContable</td>
+                                    <td>@linea.descripcionLinea</td>
+                                    <td>@string.Format("{0:#,##0.00}", @linea.debito)</td>
+                                    <td>@string.Format("{0:#,##0.00}", @linea.credito)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

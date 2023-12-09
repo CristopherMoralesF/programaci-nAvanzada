@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@using assetManagementClassLibrary.Models
+@using assetManagementClassLibrary
 @model List<UsuariosEnt>
 
 <div class="container mt-4">
@@ -21,18 +21,18 @@
             @foreach (var user in Model)
             {
                 <tr>
-                    <td>@user.ID_USUARIO</td>
-                    <td>@user.NOMBRE</td>
-                    <td>@user.CORREO</td>
-                    <td>@user.ID_ROLE</td>
+                    <td>@user.idUsuario</td>
+                    <td>@user.nombre</td>
+                    <td>@user.correo</td>
+                    <td>@user.idRole</td>
                     <td>
                         <!-- Botón de editar usuario -->
-                        <a href="@Url.Action("EditUser", "Admin", new { userId = user.ID_USUARIO })" class="btn btn-primary">Editar</a>
+                        <a href="@Url.Action("EditUser", "Admin", new { userId = user.idUsuario })" class="btn btn-primary">Editar</a>
 
 
                         <!-- Botón de eliminar usuario -->
                         <form asp-controller="Admin" asp-action="DeleteUser" method="post" class="d-inline">
-                            <input type="hidden" name="userId" value="@user.ID_USUARIO" />
+                            <input type="hidden" name="userId" value="@user.idUsuario" />
                             <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">Eliminar</button>
                         </form>
 
@@ -43,5 +43,5 @@
     </table>
 
     <!-- Botón para agregar un nuevo usuario -->
-    <a asp-controller ="Admin" asp-action="AddUser"  class="btn btn-success">Agregar Usuario</a>
+    <a asp-controller="Admin" asp-action="AddUser" class="btn btn-secondary">Agregar Usuario</a>
 </div>

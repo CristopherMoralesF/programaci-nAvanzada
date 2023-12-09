@@ -7,23 +7,27 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using assetManagementClassLibrary.Models;
 using System.Net;
 using System.Net.Mail;
 using assetManagement.Models;
 using System.Text;
-
+using assetManagementClassLibrary;
+using assetManagementClassLibrary.assetManagementDbModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace assetManagment.Controllers
 {
     public class AuthController : Controller
     {
         private readonly HttpClient _httpClient;
+        private readonly ASSET_MANAGEMENTContext _dbContext;
 
-        public AuthController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+        public AuthController(IHttpClientFactory httpClientFactory, IConfiguration configuration, ASSET_MANAGEMENTContext dbContext)
         {
             _httpClient = httpClientFactory.CreateClient();
             _httpClient.BaseAddress = new Uri(configuration["ApiSettings:AssetManagementApiUrl"]);
+
+            _dbContext = dbContext; // Inyecta el contexto de la base de datos
         }
 
         [HttpGet]
@@ -31,7 +35,6 @@ namespace assetManagment.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
@@ -50,23 +53,44 @@ namespace assetManagment.Controllers
             {
                 var user = await response.Content.ReadFromJsonAsync<UsuariosEnt>();
 
-                // Guardar información de sesión
-                HttpContext.Session.SetString("NOMBRE", user.NOMBRE);
-                HttpContext.Session.SetString("CORREO", user.CORREO);
-                HttpContext.Session.SetInt32("ID_ROLE", user.ID_ROLE);
+                // Obtener el objeto Usuario directamente de la base de datos
+                var usuarioEntity = await _dbContext.Usuarios
+                    .SingleOrDefaultAsync(u => u.Correo == user.correo); // Ajustar la lógica de búsqueda según la estructura de tu base de datos
 
-                if (user.ID_ROLE == 1) // Si el ID_ROLE es igual a 1 (administrador)
+                if (usuarioEntity != null)
                 {
-                    return RedirectToAction("Users", "Admin");
+                    // Guardar información en la sesión
+                    HttpContext.Session.SetString("nombre", usuarioEntity.Nombre);
+                    HttpContext.Session.SetString("correo", usuarioEntity.Correo);
+                    HttpContext.Session.SetInt32("IdRole", usuarioEntity.IdRole);
+
+                    if (usuarioEntity.IdRole == 1)
+                    {
+                        return RedirectToAction("Users", "Admin");
+                    }
+                    else if (usuarioEntity.IdRole == 2)
+                    {
+                        return RedirectToAction("Index", "Asientos");
+
+                    }
+                    else if (usuarioEntity.IdRole == 3)
+                    {
+                        return RedirectToAction("Principal", "Home");
+
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
-                else // En otros casos (posiblemente otros roles)
+                else
                 {
-                    return RedirectToAction("Index", "Home");
+                    TempData["ErrorMessage"] = "Datos incorrectos, intentelo de nuevo o contacte a su administrador";
+                    return View();
                 }
             }
             else
             {
-                // Failed login, display an error message in TempData
                 TempData["ErrorMessage"] = "Datos incorrectos, intentelo de nuevo o contacte a su administrador";
                 return View();
             }
@@ -83,7 +107,7 @@ namespace assetManagment.Controllers
 
             return RedirectToAction("Login", "Auth"); // Redirige al método de inicio de sesión
         }
-       
+
 
     }
 }

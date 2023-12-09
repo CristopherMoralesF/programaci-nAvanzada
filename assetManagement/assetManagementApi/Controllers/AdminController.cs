@@ -1,5 +1,5 @@
-﻿using assetManagement.Models;
-using assetManagementClassLibrary.Models;
+﻿using assetManagementClassLibrary;
+using assetManagementClassLibrary.assetManagementDbModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,9 +10,9 @@ namespace assetManagementApi.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
-        private readonly YourDbContext _dbContext;
+        private readonly ASSET_MANAGEMENTContext _dbContext;
 
-        public AdminController(YourDbContext dbContext)
+        public AdminController(ASSET_MANAGEMENTContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -27,7 +27,7 @@ namespace assetManagementApi.Controllers
         [HttpPost]
         public IActionResult AddUser([FromBody] UsuariosEnt newUser)
         {
-            _dbContext.Database.ExecuteSqlInterpolated($"EXEC AgregarUsuario {newUser.NOMBRE}, {newUser.CORREO}, {newUser.CONTRASENNA}, {newUser.ID_ROLE}");
+            _dbContext.Database.ExecuteSqlInterpolated($"EXEC AgregarUsuario {newUser.nombre}, {newUser.correo}, {newUser.contraseña}, {newUser.idRole}");
             return Ok("Usuario agregado exitosamente");
         }
 
@@ -41,7 +41,7 @@ namespace assetManagementApi.Controllers
         [HttpPut("{id}")]
         public IActionResult EditUser(int id, [FromBody] UsuariosEnt updatedUser)
         {
-            _dbContext.Database.ExecuteSqlInterpolated($"EXEC EditarUsuario {id}, {updatedUser.NOMBRE}, {updatedUser.CORREO}, {updatedUser.CONTRASENNA}, {updatedUser.ID_ROLE}");
+            _dbContext.Database.ExecuteSqlInterpolated($"EXEC EditarUsuario {id}, {updatedUser.nombre}, {updatedUser.correo}, {updatedUser.contraseña}, {updatedUser.idRole}");
             return Ok("Usuario actualizado exitosamente");
         }
     }

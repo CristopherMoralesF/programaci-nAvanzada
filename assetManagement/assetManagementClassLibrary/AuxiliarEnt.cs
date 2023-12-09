@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Web;
 
-namespace Proyecto_API.Entities
+namespace assetManagementClassLibrary
 {
     public class AuxiliarEnt
     {

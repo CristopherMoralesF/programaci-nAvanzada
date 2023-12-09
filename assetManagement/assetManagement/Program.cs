@@ -1,4 +1,4 @@
-using assetManagement.Models;
+using assetManagementClassLibrary.assetManagementDbModel;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Add database context
-builder.Services.AddDbContext<YourDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
+builder.Services.AddDbContext<ASSET_MANAGEMENTContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("assetManagementContext"))
+    );
 builder.Services.AddHttpClient(); // Register the IHttpClientFactory service
 
 // Agregar el servicio de sesiones
@@ -21,6 +21,7 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
 
 var app = builder.Build();
 
@@ -38,8 +39,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
 app.UseSession(); // Habilitar el middleware de sesiones
+
 
 app.MapControllerRoute(
     name: "default",

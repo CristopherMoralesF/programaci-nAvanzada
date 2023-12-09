@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\crist\\Documents\\GitHub\\programacionAvanzada\\assetManagement\\assetManagementClassLibrary\\obj\\",
+=======
+    "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
+        "projectName": "assetManagementClassLibrary",
+        "projectPath": "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementClassLibrary\\assetManagementClassLibrary.csproj",
+        "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\crist\\Desktop\\ProgramacionAvanzadaweb\\programacionAvanzada-main\\assetManagement\\assetManagementClassLibrary\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",

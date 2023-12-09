@@ -35,28 +35,28 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 col-lg-2 d-md-block bg-light sidebar">
+            <nav class="col-md-2 col-lg-2 d-md-block bg-dark sidebar">
                 <div class="position-sticky">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-3" >
+                        <li class="nav-item mb-3">
 
-                            <h6>Sistema de Manejo de Activos</h6>   
-                            
+                            <h6 class="text-light text-center">Manejo de Activos</h6>
+
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="../Admin/Users">
+                            <a class="nav-link text-secondary" href="../Admin/Users">
                                 Administración de Usuarios
 
                             </a>
                         </li>
-                      
+
                         <!-- Agrega aquí más elementos de menú según tus necesidades -->
                     </ul>
                     <hr />
-                    <div class="text-center">
-                        <p>Logueado como: Administrador</p>
+                    <div class="text-center text-secondary">
+                        <p>Logged in as: Admin</p>
                         <form asp-controller="Auth" asp-action="Logout" method="post" id="logoutForm">
-                            <button class="btn btn-outline-secondary" type="submit">Cerrar sesión</button>
+                            <button class="btn btn-outline-secondary mt-3" type="submit">Cerrar sesión</button>
                         </form>
                     </div>
                 </div>

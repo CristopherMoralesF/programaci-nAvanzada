@@ -1,0 +1,67 @@
+﻿@model IEnumerable<assetManagementClassLibrary.AsientoEnt>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid px-4" style="padding-top: 25px">
+    <div class="row justify-content-center">
+        <div class="col-md-11">
+            <div class="card mb-11">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i> Lista Asientos
+                    <button class="btn btn-primary" id="btnCrearActivo" onclick="exportJournalsExcel('datatablesSimple','journals-resume')" style="margin-left: 50px"><i class="fa fa-download"></i> Descargar Archivo</button>
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>ID Asiento</th>
+                                <th>Clase Asiento</th>
+                                <th>Descripción Asiento</th>
+                                <th>Fecha</th>
+                                <th>Impacto</th>
+                                <th>Detalles</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>ID Asiento</th>
+                                <th>Clase Asiento</th>
+                                <th>Descripción Asiento</th>
+                                <th>Fecha</th>
+                                <th>Impacto</th>
+                                <th>Detalles</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var asiento in Model)
+                            {
+                                <tr>
+
+                                    @{
+                                        double totalAsiento = 0;
+
+                                        foreach (var linea in asiento.cuerpoAsiento)
+                                        {
+                                            totalAsiento = totalAsiento + linea.debito;
+                                        }
+                                    }
+
+                                    <td>@asiento.idAsiento</td>
+                                    <td>@asiento.clase.descripcionClase</td>
+                                    <td>@asiento.descripcion</td>
+                                    <td>@asiento.fecha</td>
+                                    <td>@string.Format("{0:#,##0.00}", totalAsiento)</td>
+                                    <td> <a href="@Url.Action("detalleAsiento","Asientos", new {idAsiento = @asiento.idAsiento.ToString()})" class="btn btn-outline-primary"><i class="fa fa-eye"></i></a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

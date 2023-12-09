@@ -7,17 +7,19 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using assetManagementClassLibrary.Models; // Asegúrate de tener acceso a este espacio de nombres
+
 using Microsoft.EntityFrameworkCore;
 using assetManagement.Models;
+using assetManagementClassLibrary;
+using assetManagementClassLibrary.assetManagementDbModel;
 
 public class AdminController : Controller
 {
     private readonly HttpClient _httpClient;
 
-    private readonly YourDbContext _dbContext;
+    private readonly ASSET_MANAGEMENTContext _dbContext;
 
-    public AdminController(YourDbContext dbContext, IHttpClientFactory httpClientFactory, IConfiguration configuration)
+    public AdminController(ASSET_MANAGEMENTContext dbContext, IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
         _dbContext = dbContext;
 
@@ -45,9 +47,14 @@ public class AdminController : Controller
         return View("AgregarUsuario", newUser);
     }
 
+
+
     [HttpPost]
     public async Task<IActionResult> AddUser(UsuariosEnt newUser)
     {
+        newUser.estado = 1;
+        newUser.estadoContrasenna = 1;
+        newUser.Token = "ABDC";
         var jsonRequest = JsonSerializer.Serialize(newUser);
         var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
@@ -95,14 +102,14 @@ public class AdminController : Controller
     public async Task<IActionResult> EditUser(UsuariosEnt updatedUser)
     {
         // Esta acción debería realizar la actualización del usuario en la base de datos
-        var existingUser = await _dbContext.Usuarios.FindAsync(updatedUser.ID_USUARIO);
+        var existingUser = await _dbContext.Usuarios.FindAsync(updatedUser.idUsuario);
 
         if (existingUser != null)
         {
-            existingUser.NOMBRE = updatedUser.NOMBRE;
-            existingUser.CORREO = updatedUser.CORREO;
-            existingUser.CONTRASENNA = updatedUser.CONTRASENNA;
-            existingUser.ID_ROLE = updatedUser.ID_ROLE;
+            existingUser.Nombre = updatedUser.nombre;
+            existingUser.Correo = updatedUser.correo;
+            existingUser.Contrasenna = updatedUser.contraseña;
+            existingUser.IdRole = updatedUser.idRole;
 
             await _dbContext.SaveChangesAsync();
 
@@ -116,8 +123,23 @@ public class AdminController : Controller
 
     private async Task<UsuariosEnt> GetUserFromDatabase(int userId)
     {
-        // Lógica para obtener el usuario de la base de datos utilizando Entity Framework
-        var user = await _dbContext.Usuarios.FindAsync(userId);
+        // Logic to retrieve the user from the database using Entity Framework
+        var dbUser = await _dbContext.Usuarios.FindAsync(userId);
+
+        // Mapping properties from Usuario (dbUser) to UsuariosEnt
+        UsuariosEnt user = new UsuariosEnt
+        {
+            idUsuario = dbUser.IdUsuario,
+            nombre=dbUser.Nombre,
+            correo = dbUser.Correo,
+            contraseña = dbUser.Contrasenna,
+            idRole = dbUser.IdRole,
+            estado = dbUser.Estado,
+            estadoContrasenna = dbUser.EstadoContrasenna,
+          
+        };
+
         return user;
     }
+
 }

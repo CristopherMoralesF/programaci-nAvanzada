@@ -1,0 +1,77 @@
+﻿@model IEnumerable<assetManagementClassLibrary.assetManagementDbModel.Activo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionActivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorAdquisicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaAdquisicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodosDepreciados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdClaseNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDuennoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEstadoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUbicacionNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionActivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorAdquisicion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaAdquisicion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeriodosDepreciados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdClaseNavigation.IdClase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDuennoNavigation.Contrasenna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEstadoNavigation.DescripcionEstado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUbicacionNavigation.DescripcionSeccion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdActivo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdActivo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdActivo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

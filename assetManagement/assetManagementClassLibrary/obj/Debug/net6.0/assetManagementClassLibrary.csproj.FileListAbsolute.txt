@@ -12,6 +12,7 @@ C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManage
 C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb
 C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.genruntimeconfig.cache
 C:\Users\Admin\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\ref\assetManagementClassLibrary.dll
+<<<<<<< Updated upstream
 C:\Users\santi\OneDrive\Documentos\assetmanagmentproyect\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.deps.json
 C:\Users\santi\OneDrive\Documentos\assetmanagmentproyect\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.runtimeconfig.json
 C:\Users\santi\OneDrive\Documentos\assetmanagmentproyect\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.dll
@@ -62,3 +63,47 @@ C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManage
 C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.dll
 C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\refint\assetManagementClassLibrary.dll
 C:\Users\crist\Documents\GitHub\programacionAvanzada\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb
+=======
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.deps.json
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.runtimeconfig.json
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.pdb
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfo.cs
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\refint\assetManagementClassLibrary.dll
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.genruntimeconfig.cache
+C:\Users\Admin\Documents\2. Ingenieria en Sistemas\Cuatrimestre 6 - 2023\Programación Avanzada\Backup Proyecto\programacionAvanzada 2511\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\ref\assetManagementClassLibrary.dll
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.deps.json
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.runtimeconfig.json
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.pdb
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.AssemblyReference.cache
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfoInputs.cache
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfo.cs
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\refint\assetManagementClassLibrary.dll
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.genruntimeconfig.cache
+C:\Users\santi\Downloads\PROYECTOWEBCORREGIDO\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\ref\assetManagementClassLibrary.dll
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.deps.json
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.runtimeconfig.json
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\bin\Debug\net6.0\assetManagementClassLibrary.pdb
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.AssemblyReference.cache
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfoInputs.cache
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.AssemblyInfo.cs
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.dll
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\refint\assetManagementClassLibrary.dll
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.pdb
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\assetManagementClassLibrary.genruntimeconfig.cache
+C:\Users\crist\Desktop\ProgramacionAvanzadaweb\programacionAvanzada-main\assetManagement\assetManagementClassLibrary\obj\Debug\net6.0\ref\assetManagementClassLibrary.dll
+>>>>>>> Stashed changes

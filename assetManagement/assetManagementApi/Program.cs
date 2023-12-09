@@ -1,5 +1,4 @@
 
-using assetManagement.Models;
 using assetManagementClassLibrary.assetManagementDbModel;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,11 +12,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-// Add database context
-builder.Services.AddDbContext<YourDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
-
+//Add database connection
+builder.Services.AddDbContext<ASSET_MANAGEMENTContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("assetManagementContext"));
+});
 
 var app = builder.Build();
 

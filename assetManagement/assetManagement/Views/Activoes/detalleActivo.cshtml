@@ -1,0 +1,225 @@
+﻿@model assetManagementClassLibrary.ActivoEnt
+
+@{
+    ViewData["Title"] = "detalleActivo";
+   //ViewBag.Title = "detalleActivo";
+}
+
+<style>
+    li {
+        padding: 2px;
+    }
+
+    h2#swal2-title {
+        font-size: 20px;
+    }
+</style>
+
+@{
+    //Calculate the level of risk to complete the information of the card on based on the number of complete validations
+    int totalValidacion = 0;
+    int validacionesCompletas = 0;
+    string nivelRiesgo = "";
+    string descripcionRiesgo = "Por favor complete la información correspondiente en las validaciones para reducir el nivel de riesgo  de acuerdo con las politicas y normas";
+    string imgPath = "/templates/assets/img/semaforo_amarillo.png";
+
+    foreach (var validacion in Model.validacionesActivo)
+    {
+        totalValidacion += 1;
+
+        if (validacion.valor != null)
+        {
+            validacionesCompletas += 1;
+        }
+    }
+
+    double porcentajeValidacion = (Convert.ToDouble(validacionesCompletas) / Convert.ToDouble(totalValidacion)) * 100;
+
+    if (porcentajeValidacion < 50)
+    {
+        nivelRiesgo = "Alto";
+        imgPath = "/templates/assets/img/semaforo_rojo.png";
+
+    }
+    else if (porcentajeValidacion >= 50 && porcentajeValidacion < 80)
+    {
+        nivelRiesgo = "Medio";
+        imgPath = "/templates/assets/img/semaforo_amarillo.png";
+    }
+    else
+    {
+        nivelRiesgo = "Bajo";
+        descripcionRiesgo = "Buen trabajo, por favor recuerde confirmar que la información del activo siempre este actualizada y de acuerdo con las politicas y normas";
+        imgPath = "/templates/assets/img/semaforo_verde.png";
+    }
+
+}
+
+
+@{
+    //Calculate depreciation
+
+    double depreciacionMensual = Model.valorAdquisicion / (Model.claseActivo.vidaUtil * 12);
+    double depreciacionAcumulada = depreciacionMensual * Model.periodosDepreciados;
+}
+
+
+<div class="container-fluid px-4" style="padding-top: 25px">
+
+    <div class="row">
+
+        <div class="col-md-5">
+            <div class="card mb-5">
+                <div class="card-body" style="background: rgb(79,80,96); background: linear-gradient(6deg, rgba(79,80,96,1) 17%, rgba(0,0,0,1) 65%); color: white ">
+                    <div class="row">
+                        <div class="col-xl-3" align="center">
+                            <img src=@imgPath alt="Indicador riesgo" style="width: 100%; max-width: 250px; margin-left: auto; margin-right: auto" />
+                        </div>
+                        <div class="col-xl-9">
+                            <h5>El nivel de riesgo del activo es:</h5>
+                            <h1>@nivelRiesgo</h1>
+                            <p>@descripcionRiesgo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Detalles @Model.descripcionActivo
+                    <button style="margin-left: 10px" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-lg"> <i class="fa fa-pen"></i> Editar Clase </button>
+                </div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <ul>
+                                <li>Clase Activo: @Model.claseActivo.descripcionClase</li>
+                                <li>Ubicación - Edificio: @Model.ubicacionActivo.idEdificio - @Model.ubicacionActivo.descripcionSeccion</li>
+                                <li>Dueño: @Model.duennoActivo.nombre</li>
+                                <li>Estado: @Model.estadoActivo.descripcionEstado</li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-6">
+                            <ul>
+                                <li>Fecha de Adquisición: @Model.fechaAdquiscion</li>
+                                <li>Valor Adquisición: @string.Format("{0:#,##0.00}", @Model.valorAdquisicion)</li>
+                                <li>Periodos Depreciados: @Model.periodosDepreciados</li>
+                                <li>Depreciacíon Acumulada: @string.Format("{0:#,##0.00}", @depreciacionAcumulada)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-check me-1"></i>
+                    Detalle Validaciones @Model.descripcionActivo
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Descripción Validacion</th>
+                                <th>Valor Actual</th>
+                                <th>Modificación</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Descripción Validacion</th>
+                                <th>Valor Actual</th>
+                                <th>Modificación</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+
+
+
+                            @foreach (var validacion in Model.validacionesActivo)
+                            {
+                                <tr>
+                                    <td>@validacion.descripcionValidacion</td>
+                                    <td>@validacion.valor</td>
+
+                                    @if (validacion.valor == null)
+                                    {
+                                        <td><button class="btn btn-outline-primary" onclick="agregarValidacion(@Model.idActivo,@validacion.idValidacion)"> <i class="fa fa-plus"></i></button></td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <button class="btn btn-outline-primary" onclick="editarValidacion(@Model.idActivo,@validacion.idValidacion)">
+                                                <i class="fa fa-pen"></i>
+                                            </button>
+                                        </td>
+                                    }
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Modificar Clase</h4>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="modificarClase(@Model.idActivo); return false">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="alert alert-danger" role="alert">
+                                Tome en consideración que al modificar la clase genera un impact contable y la eliminación de la información relacionada con las validaciones de los activos.
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xl-9">
+                                <select id="selNewClase" class="form-control" required>
+                                    <option value="" disabled selected>Seleccione la clase nueva</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-3">
+                                <input type="submit" name="changeClase" id="changeClase" class="btn btn-primary" value="Cambiar Clase" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- SweetAlerts -->
+<script src="~/templates/js/sweetAlert.js"></script>
+<script src="~/Scripts/Custom Scripts/GenericAlerts.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="~/Scripts/Custom Scripts/detalleActivos.js"></script>
+
+

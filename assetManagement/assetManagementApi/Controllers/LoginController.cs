@@ -1,5 +1,5 @@
-﻿using assetManagement.Models;
-using assetManagementClassLibrary.Models;
+﻿
+using assetManagementClassLibrary.assetManagementDbModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -10,9 +10,9 @@ namespace assetManagementApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly YourDbContext _dbContext;
+        private readonly ASSET_MANAGEMENTContext _dbContext;
 
-        public LoginController(YourDbContext dbContext)
+        public LoginController(ASSET_MANAGEMENTContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -31,9 +31,9 @@ namespace assetManagementApi.Controllers
                 // Successful login, return a success response
                 return Ok(new
                 {
-                    NOMBRE = user.NOMBRE,
-                    CORREO = user.CORREO,
-                    ID_ROLE = user.ID_ROLE
+                    NOMBRE = user.Nombre,
+                    CORREO = user.Correo,
+                    ID_ROLE = user.IdRole
                 });
             }
             else
@@ -43,9 +43,9 @@ namespace assetManagementApi.Controllers
             }
         }
 
-}
+    }
 
-public class LoginRequestModel
+    public class LoginRequestModel
     {
         public string IN_EMAIL { get; set; }
         public string IN_CONTRASENNA { get; set; }
