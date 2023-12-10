@@ -93,23 +93,6 @@ namespace assetManagement.Controllers
             }
         }
 
-        [HttpGet]
-        public async Task<IActionResult> buscarInformacionClase(string idClase)
-        {
-            try
-            {
-                HttpResponseMessage response = await _httpClient.GetAsync("api/consultarClase?idClase=" + Convert.ToInt16(idClase));
-                if (response.IsSuccessStatusCode)
-                {
-                    return View();
-                }
-                return View();
-            }
-            catch (Exception ex)
-            {
-                return View("Index");
-            }
-        }
 
         public async Task<List<SelectListItem>> seleccionarClase()
         {
@@ -181,33 +164,109 @@ namespace assetManagement.Controllers
             }
         }
 
+        //[HttpPost]
+        //public async Task<ActionResult> crearValidacionClase(string idClase, string descripcionValidacion)
+        //{
+        //    try
+        //    {
+        //        HttpResponseMessage response = await _httpClient.GetAsync("api/crearValidacionClase");
+        //        ClaseEnt nuevaValidacion = new ClaseEnt
+        //        {
+        //            idClase = Convert.ToInt32(idClase),
+        //            validacionClase = new ValidacionClaseEnt { descripcionValidacion = descripcionValidacion }
+        //        };
+        //        JsonContent body = JsonContent.Create(nuevaValidacion);
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            return RedirectToAction("ListarClases");
+        //        }
+        //        return View("ListarClases") ;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //}
+
         [HttpPost]
-        public async Task<ActionResult> crearValidacionClase(string idClase, string descripcionValidacion)
+        public async Task<IActionResult> crearValidacionClase(string idClase, string descripcionValidacion)
         {
             try
             {
-                HttpResponseMessage response = await _httpClient.GetAsync("api/crearValidacionClase");
-
                 ClaseEnt nuevaValidacion = new ClaseEnt
                 {
                     idClase = Convert.ToInt32(idClase),
                     validacionClase = new ValidacionClaseEnt { descripcionValidacion = descripcionValidacion }
                 };
-                JsonContent body = JsonContent.Create(nuevaValidacion);
 
+
+                var response = await _httpClient.PostAsJsonAsync("api/crearValidacionClase", nuevaValidacion);
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("ListarClases");
+                    var resultado = await response.Content.ReadAsStringAsync();
+                    return Json(resultado);
                 }
+                else
+                {
+                    return Json(new { error = "Error al crear la validacion" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { error = "Error al crear la validacion" });
+            }
+        }
 
-                return View("ListarClases") ;
+        public List<ValidacionClaseEnt> consultarValidacionesClase(int idClase)
+        {
+
+            var validacionesClase = (from x in _context.TipoValidacions
+                                     where x.IdClase == idClase
+                                     select x).ToList();
+
+            List<ValidacionClaseEnt> listaValidaciones = new List<ValidacionClaseEnt>();
+
+
+            foreach (var validacion in validacionesClase)
+            {
+
+                listaValidaciones.Add(new ValidacionClaseEnt
+                {
+                    idValidacion = validacion.IdTipoValidacion,
+                    descripcionValidacion = validacion.DescripcionValidacion
+                });
+            }
+
+
+            return listaValidaciones;
+
+        }
+
+        [HttpGet]
+        public ClaseEnt buscarInformacionClase(int idClase)
+        {
+
+            try
+            {
+                var clase = (from x in _context.Clases
+                             where x.IdClase == idClase
+                             select x).FirstOrDefault();
+
+                ClaseEnt claseOutput = new ClaseEnt();
+
+                claseOutput.idClase = clase.IdClase;
+                claseOutput.descripcionClase = clase.DescripcionClase;
+                claseOutput.vidaUtil = (int)clase.VidaUtil;
+                claseOutput.listaValidaciones = consultarValidacionesClase(clase.IdClase);
+
+                return claseOutput;
 
             }
             catch (Exception ex)
             {
-
                 return null;
             }
+
         }
-}
+    }
 }

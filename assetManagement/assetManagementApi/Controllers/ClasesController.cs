@@ -164,7 +164,7 @@ namespace assetManagementApi.Controllers
 
         [Route("api/crearValidacionClase")]
         [HttpPost]
-        public int crearValidacionClase(ClaseEnt clase)
+        public int crearValidacionClase([FromBody] ClaseEnt clase)
         {
             TipoValidacion VALIDACION = new TipoValidacion();
 
