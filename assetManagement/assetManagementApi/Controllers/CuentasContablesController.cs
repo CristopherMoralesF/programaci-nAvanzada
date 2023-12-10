@@ -47,18 +47,17 @@ namespace assetManagementApi.Controllers
 
         [Route("api/cuentas/crearCuenta")]
         [HttpPost]
-        public int crearCuenta(CuentaContableEnt nuevaCuenta)
+        public int crearCuenta([FromBody]CuentaContableEnt nuevaCuenta)
         {
+
+       
 
             CuentaContable cuenta = new CuentaContable();
 
             cuenta.IdCuenta = nuevaCuenta.idCuenta;
             cuenta.DescripcionCuenta = nuevaCuenta.descripcionCuenta;
-            cuenta.IdCategoria = nuevaCuenta.categoriaCuenta.idCategoria;
-            cuenta.Naturaleza = nuevaCuenta.naturaleza;
-            cuenta.Balance = 0;
-            cuenta.TotalDebitos = 0;
-            cuenta.TotalCreditos = 0;
+            cuenta.IdCategoria = nuevaCuenta.categoriaCuenta.idCategoria; //2;
+            cuenta.Naturaleza = nuevaCuenta.naturaleza;//"D";
 
             _context.Add(cuenta);
             return _context.SaveChanges();
@@ -68,7 +67,7 @@ namespace assetManagementApi.Controllers
 
         [Route("api/cuentas/buscarCuenta")]
         [HttpGet]
-        public CuentaContableEnt buscarCuenta(string idCuenta)
+        public CuentaContableEnt buscarCuenta([FromRoute]string idCuenta)
         {
             var resultado = (from x in _context.CuentaContables
                              where x.IdCuenta == idCuenta

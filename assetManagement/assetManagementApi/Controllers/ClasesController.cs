@@ -16,40 +16,42 @@ namespace assetManagementApi.Controllers
         }
 
 
-        //[Route("api/ejecutarDepreciacionClase")]
-        //[HttpPost]
-        //public List<AuxiliarEnt> ejecutarDepreciacionClase(ClaseEnt clase)
-        //{
-        //    //Run depreciation
-        //    _context.CORRER_DEPRECIACION(clase.idClase, clase.asientoDepreciacion.descripcion);
+        [Route("api/ejecutarDepreciacionClase")]
+        [HttpPost]
+        public List<AuxiliarEnt> ejecutarDepreciacionClase([FromBody] ClaseEnt clase)
+        {
+            //Run depreciation
 
-        //    //Get the assets subledger with the new depreciation. 
-        //    var resultados = (from x in _context.AuxiliarDepreciacions
-        //                      where x.IdClase == clase.idClase
-        //                      select x).ToList();
+            //_context.CORRER_DEPRECIACION(clase.idClase, clase.asientoDepreciacion.descripcion);
+            _context.Database.ExecuteSqlInterpolated($"EXEC CORRER_DEPRECIACION {clase.idClase}, {clase.asientoDepreciacion.descripcion}");
 
-        //    //Create the object to return the result
-        //    List<AuxiliarEnt> nuevoAuxiliar = new List<AuxiliarEnt>();
+            //Get the assets subledger with the new depreciation. 
+            var resultados = (from x in _context.AuxiliarDepreciacions
+                              where x.IdClase == clase.idClase
+                              select x).ToList();
 
-        //    foreach (var linea in resultados)
-        //    {
-        //        nuevoAuxiliar.Add(new AuxiliarEnt
-        //        {
-        //            descripcionActivo = linea.DescripcionActivo,
-        //            valorAdquisicion = linea.ValorAdquisicion,
-        //            fechaAdquisicion = (DateTime)linea.FechaAdquisicion,
-        //            periodosDepreciados = (int)linea.PeriodosDepreciados,
-        //            descripcionClase = linea.DescripcionClase,
-        //            vidaUtil = (int)linea.VidaUtil,
-        //            idClase = linea.IdClase,
-        //            depreciacionMensual = Convert.ToDouble(linea.DepreciacionMensual),
-        //            depreciacionAcumulada = Convert.ToDouble(linea.DepreciacionAcumulada)
-        //        });
-        //    }
+            //Create the object to return the result
+            List<AuxiliarEnt> nuevoAuxiliar = new List<AuxiliarEnt>();
 
-        //    return nuevoAuxiliar;
+            foreach (var linea in resultados)
+            {
+                nuevoAuxiliar.Add(new AuxiliarEnt
+                {
+                    descripcionActivo = linea.DescripcionActivo,
+                    valorAdquisicion = linea.ValorAdquisicion,
+                    fechaAdquisicion = (DateTime)linea.FechaAdquisicion,
+                    periodosDepreciados = (int)linea.PeriodosDepreciados,
+                    descripcionClase = linea.DescripcionClase,
+                    vidaUtil = (int)linea.VidaUtil,
+                    idClase = linea.IdClase,
+                    depreciacionMensual = Convert.ToDouble(linea.DepreciacionMensual),
+                    depreciacionAcumulada = Convert.ToDouble(linea.DepreciacionAcumulada)
+                });
+            }
 
-        //}
+            return nuevoAuxiliar;
+
+        }
 
 
         public List<ValidacionClaseEnt> consultarValidacionesClase(int idClase)
@@ -124,17 +126,7 @@ namespace assetManagementApi.Controllers
             }
         }
 
-        //[Route("api/crearClase")]
-        //[HttpPost]
-        //public int crearClase(ClaseEnt nuevaClase)
-        //{
-        //_context.Database.ExecuteSqlInterpolated($"EXEC CREAR_CLASE {nuevaClase.descripcionClase}, {nuevaClase.cuentaActivo.idCuenta}, {nuevaClase.cuentaDepAcumulada.idCuenta}, {nuevaClase.cuentaGasto.idCuenta}, {nuevaClase.vidaUtil}");
-        //return Ok("Clase creada exitosamente");
-
-
-        //    return _context.SaveChanges();
-        //}
-
+        [Route("api/crearClase")]
         [HttpPost]
         public IActionResult crearClase([FromBody] ClaseEnt nuevaClase)
         {
