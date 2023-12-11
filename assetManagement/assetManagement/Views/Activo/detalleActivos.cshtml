@@ -1,0 +1,150 @@
+﻿@model List<assetManagementClassLibrary.AuxiliarEnt>
+
+
+@{
+    ViewBag.Title = "Detalle Activos";
+}
+
+<div class="container-fluid px-4" style="padding-top: 25px">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Lista Usuarios
+                    <button type="button" class="btn btn-primary" style="margin-left: 50px" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i> Crear Activo</button>
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Descripción Activo</th>
+                                <th>Valor Adquisición</th>
+                                <th>Fecha Adquisición</th>
+                                <th>Periodos Depreciados</th>
+                                <th>Descripción Clase</th>
+                                <th>Vida Util</th>
+                                <th>Depreciación Mensual</th>
+                                <th>Depreciación Acumulada</th>
+                                <th>Visualizar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var activo in Model)
+                            {
+                                <tr>
+                                    <td>@activo.descripcionActivo</td>
+                                    <td>@string.Format("{0:#,##0.00}", @activo.valorAdquisicion)</td>
+                                    <td>@activo.fechaAdquisicion</td>
+                                    <td>@activo.periodosDepreciados</td>
+                                    <td>@activo.descripcionClase</td>
+                                    <td>@activo.vidaUtil</td>
+                                    <td>@string.Format("{0:#,##0.00}", @activo.depreciacionMensual)</td>
+                                    <td>@string.Format("{0:#,##0.00}", @activo.depreciacionAcumulada)</td>
+                                    <td>
+                                        <a href="@Url.Action("detalleActivo","Activo", new {idActivo = @activo.idActivo.ToString()})" class="btn btn-outline-primary"><i class="fa fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="container" style="margin-top: 25px">
+                    <div class="row">
+                        <h4 id="editModalHeader"><i class="fas fa-plus"></i> Agregar un nuevo activo</h4>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12" style="margin-top: 10px">
+                            <form onsubmit="CrearActivo(); return false">
+                                <div class="form-group">
+                                    <label for="txtDescripciónActivo">Descripción Activo</label>
+                                    <input type="text" id="txtDescripciónActivo" class="form-control" placeholder="Descripción del Activo" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtValorAdquisición">Valor de Adquisición</label>
+                                    <input type="number" id="txtValorAdquisición" class="form-control" placeholder="Valor Adquisición" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selidClase">Clase</label>
+                                        <select class="form-control" id="selidClase" required>
+                                            <option value="" disabled selected>Seleccione una opción</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selidUbicacion">Ubicación</label>
+                                        <select class="form-control" id="selidUbicacion" required>
+                                            <option value="" disabled selected>Seleccione una opción</option>
+                                            <option value="1">CR1 - Nossara</option>
+                                            <option value="2">CR1 - Ocotal</option>
+                                            <option value="3">CR1 - Conchal</option>
+                                            <option value="4">CR1 - Uva</option>
+                                            <option value="5">CR1 - Ensamblaje</option>
+                                            <option value="6">CR1 - Prueba </option>
+                                            <option value="7">CR1 - Bodega A</option>
+                                            <option value="8">CR1 - Bodega B</option>
+                                            <option value="9">CR1 - Bodega C</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selDuenno">Dueño Activo</label>
+                                        <select class="form-control" id="selDuenno" required>
+                                            <option value="" disabled selected>Seleccione una opción</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="selEstado">Estado</label>
+                                        <select class="form-control" id="selEstado" required>
+                                            <option value="" disabled selected>Seleccione una opción</option>
+                                            <option value="1">Activo en Bodega</option>
+                                            <option value="2">Activo en Construcción</option>
+                                            <option value="3">Activo en Uso</option>
+                                            <option value="4">Activo Deteriorado</option>
+                                            <option value="5">Activo Donado</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-center">
+                                    <input type="submit" name="btnCrearActivo" value="Crear Activo" class="btn btn-primary" />
+                                    <!--
+                                    <button type ="submit" class="btn btn-primary" id="btnCrearActivo" onclick="CrearActivo();"><i class="fas fa-plus"></i> Agregar Nuevo Activo</button>
+                                        -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SweetAlerts -->
+<script src="~/templates/js/sweetAlert.js"></script>
+<script src="~/Scripts/Custom Scripts/GenericAlerts.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="~/Scripts/Custom Scripts/listaActivos.js"></script>
+

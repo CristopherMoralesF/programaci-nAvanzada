@@ -2,7 +2,8 @@
 
 function drawClassAssetResume() {
 
-    rows = document.getElementById("datatablesSimple").rows.length - 2;
+    rows = document.getElementById("datatablesSimple").rows.length - 1;
+    disponibles = 30 - rows
 
     const data = {
         labels: ['Utilizadas', 'Disponibles'],
@@ -10,7 +11,7 @@ function drawClassAssetResume() {
             {
                 label: 'Licencias',
                 backgroundColor: ['#146CA4', '#ADD8E6'],
-                data: [rows,30]
+                data: [rows, disponibles]
             }
         ]
     };
@@ -50,7 +51,7 @@ function validarCorreo() {
         },
         dataType: "json",
         success: function (data) {
-            if (data != "") {
+            if (data != null) {
                 document.getElementById("alrMensajeError").innerHTML = "El correo que desea ingresar ya existe"
                 document.getElementById("alrMensajeError").style.display = "";
                 document.getElementById("btnCrearUsuario").style.display = "none"; 

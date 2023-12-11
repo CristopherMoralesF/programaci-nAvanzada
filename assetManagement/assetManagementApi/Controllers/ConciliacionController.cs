@@ -2,6 +2,7 @@
 using assetManagementClassLibrary.assetManagementDbModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 
 namespace assetManagementApi.Controllers
 {
@@ -40,6 +41,33 @@ namespace assetManagementApi.Controllers
 
 
             return Ok(conciliacion);
+        }
+
+        [Route("agregarValidacionActivo")]
+        [HttpPost]
+        public int completarValidacion(ValidacionClaseEnt nuevaValidacion)
+        {
+            Validacion validacion = new Validacion();
+
+            validacion.IdTipoValidacion = nuevaValidacion.idValidacion;
+            validacion.IdActivo = nuevaValidacion.idActivo;
+            validacion.Valor = nuevaValidacion.valor;
+
+            _context.Add(validacion);
+            return _context.SaveChanges();
+        }
+
+        [Route("modificarValidacionActivo")]
+        [HttpPost]
+        public int modificarValidacion(ValidacionClaseEnt validacion)
+        {
+            var validacionEditar = (from x in _context.Validacions
+                                    where x.IdTipoValidacion == validacion.idValidacion && x.IdActivo == validacion.idActivo
+                                    select x).FirstOrDefault();
+
+            validacionEditar.Valor = validacion.valor;
+
+            return _context.SaveChanges();
         }
 
     }

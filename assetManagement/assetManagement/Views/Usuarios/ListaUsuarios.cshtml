@@ -1,0 +1,199 @@
+﻿@model List<assetManagementClassLibrary.UsuariosEnt>
+
+@{
+    ViewBag.Title = "ListaUsuarios";
+}
+
+<div class="container-fluid px-4" style="padding-top: 25px">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Lista Usuarios
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Role</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var usuario in Model)
+                            {
+                                <tr>
+                                    <td>@usuario.nombre</td>
+                                    <td>@usuario.correo</td>
+                                    <td class="text-center">@usuario.role</td>
+
+                                    @if (@usuario.estado == 1)
+                                    {
+                                        <td class="text-center">Activo</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="text-center">Inactivo</td>
+                                    }
+
+
+                                    <td class="text-center">
+
+                                        <button class="btn btn-outline-primary" onclick="editarUsuario(@usuario.idUsuario)">
+                                            <i class="fas fa-pen"></i>
+                                        </button>
+
+                                        @if (@usuario.estado == 1)
+                                        {
+
+                                            <button style="width: 42px" class="btn btn-outline-primary" onclick="modificarEstadoUsuario(@usuario.idUsuario,@usuario.estado)">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+
+                                            <!--
+                                            <button style="width: 42px" class="btn btn-outline-primary" onclick="modificarEstadoUsuario(@usuario.idUsuario,@usuario.estado)">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                                -->
+                                        }
+                                        else
+                                        {
+                                            <button style="width: 42px" class="btn btn-outline-primary" onclick="modificarEstadoUsuario(@usuario.idUsuario,@usuario.estado)">
+                                                <i class="fa fa-user-check"></i>
+                                            </button>
+                                        }
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+
+                <!-- Button to activate modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <i class="fas fa-user-plus"></i>
+                    Agregar Usuario
+                </button>
+
+                <!-- Modal Content -->
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+
+                        <div class="modal-content">
+                            <div class="container" style="margin-top: 25px">
+                                <div class="row">
+                                    <h4>Agregar Usuarios</h4>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="txtCorreoElectronico">Correo Electronico</label>
+                                            <input type="text" id="txtCorreoElectronico" class="form-control" placeholder="Correo Electronico" onblur="validarCorreo();" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtNombre">Nombre</label>
+                                            <input type="text" id="txtNombre" class="form-control" placeholder="Nombre" onchange="validarNombre();" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label for="selRole">Role</label>
+                                                <select class="form-control" id="selRole">
+                                                    <option value="1">ADMIN</option>
+                                                    <option value="2">CONTADOR</option>
+                                                    <option value="3">TAGGER</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-danger" id="alrMensajeError" role="alert">
+                                            Complete toda la información requerida
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <button class="btn btn-primary" id="btnCrearUsuario" style="display: none" onclick="crearUsuario();"><i class="fas fa-user-plus"></i> Crear Usuario</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" style="margin-top: 25px">
+                <div class="card-mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-user"></i> Licencias Disponibles
+                    </div>
+                    <div class="row">
+                        <center>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <canvas id="licenseChart" width="50" height="50" style="display: block; width: 50px; height: 50px;" class="chartjs-render-monitor"></canvas>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-editar-usuario" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="editUserModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="container" style="margin-top: 25px">
+                    <div class="row">
+                        <h4 id="editModalHeader">Editar Usuario</h4>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="hidden" id="txtIdUsuario" class="form-control" placeholder="Id Usuario" />
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEditCorreoElectronico">Correo Electronico</label>
+                                <input type="text" id="txtEditCorreoElectronico" class="form-control" placeholder="Correo Electronico" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEditNombre">Nombre</label>
+                                <input type="text" id="txtEditNombre" class="form-control" placeholder="Nombre" onchange="validarNombre();" />
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="selEditRole">Role</label>
+                                    <select class="form-control" id="selEditRole">
+                                        <option value="1">ADMIN</option>
+                                        <option value="2">CONTADOR</option>
+                                        <option value="3">TAGGER</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-primary" id="btnActualizarUsuario" onclick="actualizarUsuario();"><i class="fas fa-user-check"></i> Actualizar Usuario</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="~/templates/js/jquery-3.2.1.slim.min.js"></script>
+<script src="~/templates/js/ChartJS.js"></script>
+<script src="~/Scripts/Custom Scripts/ListaUsuarios.js"></script>

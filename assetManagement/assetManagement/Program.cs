@@ -1,25 +1,13 @@
-using assetManagementClassLibrary.assetManagementDbModel;
-using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Add database context
-builder.Services.AddDbContext<ASSET_MANAGEMENTContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("assetManagementContext"))
-    );
-builder.Services.AddHttpClient(); // Register the IHttpClientFactory service
-
-// Agregar el servicio de sesiones
-builder.Services.AddSession(options =>
-{
-    // Configuraciones de la sesión, como el tiempo de expiración, etc.
-    options.Cookie.Name = ".AspNetCore.Session";
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(op => {
+    op.IdleTimeout = TimeSpan.FromHours(2);
+    op.Cookie.HttpOnly = true;
+    op.Cookie.IsEssential = true;
 });
 
 
@@ -39,11 +27,10 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-app.UseSession(); // Habilitar el middleware de sesiones
-
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Auth}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

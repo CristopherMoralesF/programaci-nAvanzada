@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "assetManagement", "assetManagement\assetManagement.csproj", "{6BBC3E60-73DB-430F-8746-E6E04A8AE2DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assetManagementApi", "assetManagementApi\assetManagementApi.csproj", "{1698C84A-6AF2-462B-8629-2C2E1CFCC53A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "assetManagementApi", "assetManagementApi\assetManagementApi.csproj", "{1698C84A-6AF2-462B-8629-2C2E1CFCC53A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assetManagementClassLibrary", "assetManagementClassLibrary\assetManagementClassLibrary.csproj", "{2806788F-98A5-40C5-9AE6-2F7EEF1AE266}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "assetManagementClassLibrary", "assetManagementClassLibrary\assetManagementClassLibrary.csproj", "{2806788F-98A5-40C5-9AE6-2F7EEF1AE266}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

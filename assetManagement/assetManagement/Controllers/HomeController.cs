@@ -19,6 +19,8 @@ namespace assetManagement.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
+            _httpClient= new HttpClient();
+            _httpClient.BaseAddress = new Uri("https://localhost:7291/api/"); 
             _logger = logger;
         }
 
@@ -27,40 +29,82 @@ namespace assetManagement.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Principal(UsuariosEnt usuario) {
+        public async Task<IActionResult> Principal(loginUsuarioEnt usuario) {
 
             try
             {
 
-                JsonContent body = JsonContent.Create(usuario); 
+                string jsonBody = JsonConvert.SerializeObject(usuario);
+                var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await _httpClient.PostAsync("api/Usuarios/validarUsuario", body);
+
+                HttpResponseMessage response = await _httpClient.PostAsync("Usuarios/validarUsuario", content);
 
                 // Check if the request was successful
                 if (response.IsSuccessStatusCode)
                 {
                     
-                    UsuariosEnt nuevoUsuario = new UsuariosEnt();
-                    // Do something with the nuevoUsuario
+                    var contentCall = await response.Content.ReadAsStringAsync();
+                    var nuevoUsuario = JsonConvert.DeserializeObject<UsuariosEnt>(contentCall); 
+                    
 
-                    return Ok(nuevoUsuario);
+                    HttpContext.Session.SetString("nombreUsuario", nuevoUsuario.nombre.ToString());
+                    HttpContext.Session.SetInt32("idRole", nuevoUsuario.idRole);
+
+                    IndicadoresEnt indicadores = cargarIndicadores(); 
+                    return View(indicadores);
                 }
                 else
                 {
                     // Handle the case when the API request is not successful
-                    return BadRequest("API request failed");
+                    ViewBag.mensajeError = "Usuario indicado no existe";
+                    return View("Index"); 
                 }
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                ViewBag.mensajeError = "Error al ingresar, intente nuevamente";
+                return View("Index");
+
             }
 
 
 
         }
-        
 
+        public IndicadoresEnt cargarIndicadores()
+        {
+
+            int idUsuario = (int)HttpContext.Session.GetInt32("idRole"); 
+
+            string url = "indicadores/optenerIndicadores?idUsuario=" + idUsuario.ToString();
+
+            HttpResponseMessage res = _httpClient.GetAsync(url).GetAwaiter().GetResult();
+
+            if (res.IsSuccessStatusCode)
+            {
+                return res.Content.ReadFromJsonAsync<IndicadoresEnt>().Result;
+
+            }
+
+            return new IndicadoresEnt();
+
+        }
+
+        public ActionResult dashboard()
+        {
+            try
+            {
+                IndicadoresEnt resultado = cargarIndicadores();
+                return View("Principal", resultado);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.mensajeError = "Error al generar el dashboard, intente nuevamente";
+                return View("Index");
+            }
+
+        }
     }
 }

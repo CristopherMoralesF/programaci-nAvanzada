@@ -1,7 +1,132 @@
-﻿
+﻿@model assetManagementClassLibrary.IndicadoresEnt
+
 @{
-    ViewData["Title"] = "Principal";
+    ViewBag.Title = "Home Page";
 }
 
-<h1>Principal</h1>
+@{
 
+    string riesgoGeneral;
+
+    if (Model.porcentajeCumplimineto > 0.5)
+    {
+        riesgoGeneral = "Bajo";
+    }
+    else
+    {
+        riesgoGeneral = "Alto";
+    }
+}
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Welcome @Context.Session.GetString("nombreUsuario")!</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">A continuación se le presentan el resumen de indicadores presentado hasta el momento, por favor mantener sus activos siempre actualizados y en cumplimiento con las politicas de la organización</li>
+    </ol>
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">Cantidad Activos</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    La compañía cuenta con un total de @Model.totalActivos activos actualmente
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">Total Activos</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    La compañía a invertido un total de @string.Format("{0:#,##0.00}", @Model.totalInversion) en activos
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">Porcentaje de Cumplimiento</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    El porcentaje de cumplimiento es @Model.porcentajeCumplimineto% con un riesgo @riesgoGeneral
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">Sus Activos</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    Usted es responsable de @Model.totalActivosUsuario activos, por favor asegure su correcto mantenimiento
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Total Activos Disponibles
+                </div>
+                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+            </div>
+        </div>
+
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-bar me-1"></i>
+                    Evaluación de Riesgos
+                </div>
+                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Activos mantenidos por @Context.Session.GetString("nombreUsuario")
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Descripcion Activo</th>
+                        <th>Descripcion Clase</th>
+                        <th>Porcentaje Validaciones</th>
+                        <th>Riesgo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Descripcion Activo</th>
+                        <th>Descripcion Clase</th>
+                        <th>Porcentaje Validaciones</th>
+                        <th>Riesgo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var activo in Model.activosUsuario)
+                    {
+                        <tr>
+                            <td>@activo.descripcionActivo</td>
+                            <td class="text-center">@activo.descripcionClase</td>
+                            <td class="text-center">@activo.porcentajeValidacion%</td>
+                            <td class="text-center">@activo.validacionRiesgo</td>
+                            <td class="text-center"><a class="btn btn-primary" href="@Url.Action("detalleActivo","Activo", new {idActivo = @activo.idActivo.ToString()})"><i class="fas fa-pen"></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- jquery -->
+<script src="~/templates/js/jquery-3.2.1.slim.min.js"></script>
+<script src="~/templates/js/jquery.min.js"></script>
+
+<!-- Chart JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="~/Scripts/Custom Scripts/principal_chartActivosDisponibles.js"></script>
+<script src="~/Scripts/Custom Scripts/principal_chartEvaluaciónRiesgos.js"></script>
